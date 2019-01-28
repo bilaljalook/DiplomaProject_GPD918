@@ -6,17 +6,15 @@ public class Shell : MonoBehaviour {
 
     public Transform BarrelPoint;
     public GameObject ProPre;
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
+    
+    // Update is called once per frame
+    void Update () {
+        
 	}
-    void Shoot()
+    public void Shoot()
     {
         
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
     }
+   
 }

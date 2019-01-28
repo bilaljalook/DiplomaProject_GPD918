@@ -89,6 +89,10 @@ public class PlayerController2 : MonoBehaviour
             rotationAngle = 0;
             rigid.transform.Rotate(0, 0, rotationAngle);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Shell>().Shoot();
+        }
     }
     public void Moving()
     {

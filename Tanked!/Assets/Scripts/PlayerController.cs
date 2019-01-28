@@ -16,9 +16,12 @@ public class PlayerController : MonoBehaviour
     float smoothTime = 1.0f;
     Quaternion desiredRotation;
     
+    
+    
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        
     }
     
         
@@ -29,7 +32,8 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         GetInput1();
         desiredRotation = Quaternion.Euler(0, 0, rotationAngle);
-       //transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime*0.1f);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime*0.1f);
+        
     }
     private void FixedUpdate()
     {
@@ -87,51 +91,12 @@ public class PlayerController : MonoBehaviour
             rotationAngle = 0;
             rigid.transform.Rotate(0, 0, rotationAngle);
         }
-    }
-    private void GetInput2()
-    {
-        
-        moveDirection = Vector2.zero;
-        float rotationAngle;
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.M))
         {
+            GetComponent<Shell>().Shoot();
+        }
 
-            moveDirection += Vector2.up;
 
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
-            rotationAngle = 90;
-            rigid.transform.Rotate(0, 0, rotationAngle);
-            
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            moveDirection += Vector2.down;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
-            rotationAngle = -90;
-            rigid.transform.Rotate(0, 0, rotationAngle);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            moveDirection += Vector2.left;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
-            rotationAngle = 180;
-            rigid.transform.Rotate(0, 0, rotationAngle);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            moveDirection += Vector2.right;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
-            rotationAngle = 0;
-            rigid.transform.Rotate(0, 0, rotationAngle);
-        }
     }
     public void Moving()
     {
