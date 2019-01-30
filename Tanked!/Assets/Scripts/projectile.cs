@@ -32,11 +32,8 @@ public class projectile : MonoBehaviour
         TankBlueprint Tank = collision.GetComponent<TankBlueprint>();
         if (Tank!=null)
         {
-
             Tank.TakeDamage(1);
         }
-        
-
         //GetComponent<TankBlueprint>().TakeDamage();
         Debug.Log(collision.name);
         Destroy(gameObject);

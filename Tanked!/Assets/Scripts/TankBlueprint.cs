@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TankBlueprint : MonoBehaviour {
+    //TODO clean up the code here
 
     public int health;
     public int NumHealth;
@@ -12,7 +13,7 @@ public class TankBlueprint : MonoBehaviour {
     public Sprite MaxHealth;
     public Sprite noHealth;
     public GameObject Tank;
-    
+
 	// Use this for initialization
 	void Start () {
         HealthBar();
@@ -27,13 +28,12 @@ public class TankBlueprint : MonoBehaviour {
     public void TakeDamage(int dmg=1)
     {
         
-            health = health - dmg;
-            if (health == 0)
-            {
+         health = health - dmg;
+         if (health == 0)
+         {
             health = health - dmg;
             Die();
-            }
-        
+         } 
     }
     public void HealthBar()
     {
@@ -62,12 +62,8 @@ public class TankBlueprint : MonoBehaviour {
         }
     }
     void Die()
-    {
-
-        
+    {  
         Destroy(Tank,0.1f);
-        
-        
-        
+        FindObjectOfType<ScoreSystem>().AddPts();
     }
 }
