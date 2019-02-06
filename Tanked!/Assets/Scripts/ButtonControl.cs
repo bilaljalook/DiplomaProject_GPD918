@@ -17,7 +17,10 @@ public class ButtonControl : MonoBehaviour {
             Debug.Log("You quit the game");
         }
 
+        public void LoadMain()
+        {
 
+        }
 
     
 }

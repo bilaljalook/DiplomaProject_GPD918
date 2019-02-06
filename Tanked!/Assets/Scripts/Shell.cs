@@ -15,6 +15,7 @@ public class Shell : MonoBehaviour {
     {
         
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
+
     }
    
 }

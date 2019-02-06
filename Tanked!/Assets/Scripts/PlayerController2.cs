@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController2 : MonoBehaviour
 {
+    //TODO modify the tank to make it faster with slow fire rate and 3 health bars
+    //TODO player select
     [SerializeField] public float Speed = 0.5f;
     private float vertical1;
     private float horizontal1;
@@ -15,6 +17,8 @@ public class PlayerController2 : MonoBehaviour
     float rotationAngle;
     float smoothTime = 1.0f;
     Quaternion desiredRotation;
+    public float RateOfFire = 1.5f;
+    private float nextF = 0.0f;
 
     private void Start()
     {
@@ -89,9 +93,11 @@ public class PlayerController2 : MonoBehaviour
             rotationAngle = 0;
             rigid.transform.Rotate(0, 0, rotationAngle);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextF)
         {
+            nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
+            
         }
     }
     public void Moving()

@@ -12,6 +12,8 @@ TagManager:
   - Items
   - Player1
   - Player2
+  - PowerUpSpeed
+  - PowerUpRate
   layers:
   - Default
   - TransparentFX
@@ -51,6 +53,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 3055628223
+    locked: 0
+  - name: Animation
+    uniqueID: 3327488681
     locked: 0
   - name: PickUps
     uniqueID: 2704339547

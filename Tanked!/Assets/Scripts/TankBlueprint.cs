@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TankBlueprint : MonoBehaviour {
     //TODO clean up the code here
@@ -14,10 +15,12 @@ public class TankBlueprint : MonoBehaviour {
     public Sprite noHealth;
     public GameObject Tank;
 
+    ScoreSystem scr;
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         HealthBar();
-
+        scr = FindObjectOfType<ScoreSystem>();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +36,7 @@ public class TankBlueprint : MonoBehaviour {
          {
             health = health - dmg;
             Die();
+           // SceneManager.LoadScene("GameOver");
          } 
     }
     public void HealthBar()
@@ -64,6 +68,13 @@ public class TankBlueprint : MonoBehaviour {
     void Die()
     {  
         Destroy(Tank,0.1f);
-        FindObjectOfType<ScoreSystem>().AddPts();
+        saveScore();
+        SceneManager.LoadScene(2);
+    }
+
+    void saveScore()
+    {
+        PlayerPrefs.SetInt("p1",scr.score1);
+        PlayerPrefs.SetInt("p2", scr.score2);
     }
 }
