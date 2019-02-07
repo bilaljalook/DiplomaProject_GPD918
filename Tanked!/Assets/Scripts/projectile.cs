@@ -15,6 +15,7 @@ public class projectile : MonoBehaviour
     void Start()
     {
         rigid.velocity = transform.up * speed;
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,9 +25,9 @@ public class projectile : MonoBehaviour
         {
             Tank.TakeDamage(1);
         }
-        Debug.Log(collision.name);
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
         
+        //Instantiate(explosionEffect, transform.position, transform.rotation);
+       
         Destroy(gameObject);
         
     }

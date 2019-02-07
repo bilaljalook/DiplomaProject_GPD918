@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController2 : MonoBehaviour
@@ -19,10 +20,15 @@ public class PlayerController2 : MonoBehaviour
     Quaternion desiredRotation;
     public float RateOfFire = 1.5f;
     private float nextF = 0.0f;
+    public ScoreSystem score;
+    bool update = false;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        GameObject obj = GameObject.Find("ScoreSystem");
+        score = obj.GetComponent<ScoreSystem>();
+        IsDead();
     }
 
 
@@ -33,7 +39,12 @@ public class PlayerController2 : MonoBehaviour
         vertical1 = Input.GetAxisRaw("Vertical1");
         GetInput1();
         desiredRotation = Quaternion.Euler(0, 0, rotationAngle);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime*0.1f);
+
+       if (!update)
+        {
+            
+            IsDead();
+        }
     }
     private void FixedUpdate()
     {
@@ -104,5 +115,14 @@ public class PlayerController2 : MonoBehaviour
     {
         rigid.velocity = new Vector2((horizontal1 * Speed), (vertical1 * Speed));
     }
-
+   
+    public void IsDead()
+    {
+        if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
+        {
+            score.AddPtsP1();
+            update = true;
+            Debug.Log("adding1");
+        }
+    }
 }

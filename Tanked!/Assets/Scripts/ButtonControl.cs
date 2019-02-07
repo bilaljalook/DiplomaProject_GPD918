@@ -15,6 +15,7 @@ public class ButtonControl : MonoBehaviour {
         {
             Application.Quit();
             Debug.Log("You quit the game");
+            PlayerPrefs.DeleteAll();
         }
 
         public void LoadMain()

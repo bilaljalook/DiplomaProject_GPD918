@@ -19,49 +19,47 @@ public class ScoreSystem : MonoBehaviour {
     string P2s = "P2 : ";
 
 
-    bool update=false ;
+    //
 
     // Use this for initialization
     void Start()
     {
+
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
+        score1 = PlayerPrefs.GetInt("p1", 0);
+        score2 = PlayerPrefs.GetInt("p2", 0);
         winner.text = winner.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!update)
-        {
-            AddPts();
-        }
-        Scoreboared();
-    }
-    public void AddPts()
-    {
-        PlayerPrefs.GetInt("p1");
-        PlayerPrefs.GetInt("p2");
-        if (GameObject.FindGameObjectWithTag("Player2") == null)
-        {
-            score1=score1+1;
-            update = true;
-            PlayerPrefs.SetInt("p2", score2);
-        }
-        if (GameObject.FindGameObjectWithTag("Player1") == null)
-        {
-            score2+=1;
-            update = true;
-            PlayerPrefs.SetInt("p1", score1);
-        }
+        //DontDestroyOnLoad(gameObject);
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
-       
+        Scoreboared();
     }
-    private void Awake()
+    public void AddPtsP1()
+    {
+          score1=score1+1;
+          Debug.Log("added 1");
+        
+        TextP1.text = P1s + score1.ToString();
+    }
+    public void AddPtsP2()
+    {
+        score2 += 1;
+        Debug.Log("added 2");
+
+        TextP2.text = P2s + score2.ToString();
+    }
+        
+
+    private void OnDestroy()
     {
         
-        
+        saveScore();
     }
     public void Scoreboared()
     {
@@ -85,6 +83,7 @@ public class ScoreSystem : MonoBehaviour {
     {
         PlayerPrefs.SetInt("p1", score1);
         PlayerPrefs.SetInt("p2", score2);
+        Debug.Log("Save");
     }
     
 }

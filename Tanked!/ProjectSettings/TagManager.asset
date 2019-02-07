@@ -14,6 +14,7 @@ TagManager:
   - Player2
   - PowerUpSpeed
   - PowerUpRate
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -24,10 +25,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - player
+  - pickup
+  - projectile
+  - player2
   - 
   - 
   - 
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Animation
     uniqueID: 3327488681
+    locked: 0
+  - name: Projectile
+    uniqueID: 1908945337
     locked: 0
   - name: PickUps
     uniqueID: 2704339547
