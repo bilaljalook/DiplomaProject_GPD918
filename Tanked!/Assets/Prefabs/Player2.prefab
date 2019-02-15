@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633207663974190}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -13.429224, y: -6.091037, z: -2}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.1, y: 27.7, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4709582698840024}
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1545785719890008}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2.42, y: -0.02, z: 1.9400387}
+  m_LocalPosition: {x: 6.2, y: 0, z: 1.9400387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4025980826266162}
@@ -106,18 +106,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0000014305115, y: 0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.9, y: 2.68}
+    oldSize: {x: 9.5, y: 7.3333335}
     newSize: {x: 3.9, y: 2.68}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9, y: 2.68}
+  m_Size: {x: 9.323649, y: 7.355572}
   m_EdgeRadius: 0
 --- !u!114 &114303999691176496
 MonoBehaviour:
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarrelPoint: {fileID: 4709582698840024}
   ProPre: {fileID: 1875157529174392, guid: b4da5b75cb63bb943a5f76cfcbfd0836, type: 2}
+  ShooterPlayer: {fileID: 1633207663974190}
 --- !u!114 &114693169115502328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +153,7 @@ MonoBehaviour:
   MaxHealth: {fileID: 21300028, guid: f01b6d202a487b44fa0f7d7c925a2390, type: 3}
   noHealth: {fileID: 21300060, guid: d7b564c6c1ef67348a252a6284685a73, type: 3}
   Tank: {fileID: 1633207663974190}
+  score: {fileID: 0}
 --- !u!114 &114861507540540552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,9 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdc8758a4bcbce47b88c2872202a991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 13
   limit: 0.7
   RateOfFire: 1.5
+  score: {fileID: 0}
 --- !u!212 &212557090983250730
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -199,10 +202,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1279886953
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2f33c24d21e64c4f82e7d89c0e8980f, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300012, guid: a2f33c24d21e64c4f82e7d89c0e8980f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

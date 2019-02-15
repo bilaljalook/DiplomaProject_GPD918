@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class InputControl : MonoBehaviour
 {
     //TODO transfer all ButtonControl related object in the engine to Input control
+    //TODO a dynamic variable index for next scenes to loaded automatically
     public EventSystem eventSystem;
     public GameObject selectedGameObject;
 
@@ -40,10 +42,7 @@ public class InputControl : MonoBehaviour
                 Pause();
             }
         }
-        /*if (gOver.health==0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }*/
+        
 	}
 
     private void Pause()
@@ -79,5 +78,13 @@ public class InputControl : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(Main);
+    }
+    public class DeletePlayerPrefsScript : UnityEditor.EditorWindow
+    {
+        [MenuItem("Window/Delete PlayerPrefs (All)")]
+        static void DeleteAllPlayerPrefs()
+        {
+            PlayerPrefs.DeleteAll();
+        }
     }
 }

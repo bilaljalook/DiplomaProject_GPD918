@@ -11,10 +11,9 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] public float Speed = 0.5f;
     private float vertical1;
     private float horizontal1;
-    [SerializeField] public float limit = 0.7f;
+    [SerializeField] float limit = 0.7f;
     Rigidbody2D rigid;
     private Vector2 moveDirection;
-    //private Vector2 moveDirection1;
     float rotationAngle;
     float smoothTime = 1.0f;
     Quaternion desiredRotation;

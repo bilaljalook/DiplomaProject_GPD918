@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonControl : MonoBehaviour {
 
+  
    
         public void LoadSceneByIndex(int index)
         {
@@ -20,8 +21,10 @@ public class ButtonControl : MonoBehaviour {
 
         public void LoadMain()
         {
-
+        //PlayerPrefs.DeleteKey("p1");
+        //PlayerPrefs.DeleteKey("p2");
+            
         }
 
-    
+
 }

@@ -18,9 +18,6 @@ public class ScoreSystem : MonoBehaviour {
     string P1s = "P1 : ";
     string P2s = "P2 : ";
 
-
-    //
-
     // Use this for initialization
     void Start()
     {
@@ -35,7 +32,6 @@ public class ScoreSystem : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //DontDestroyOnLoad(gameObject);
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
         Scoreboared();
@@ -57,8 +53,7 @@ public class ScoreSystem : MonoBehaviour {
         
 
     private void OnDestroy()
-    {
-        
+    {   
         saveScore();
     }
     public void Scoreboared()
@@ -85,5 +80,8 @@ public class ScoreSystem : MonoBehaviour {
         PlayerPrefs.SetInt("p2", score2);
         Debug.Log("Save");
     }
-    
+    public void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254192376968668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.351, y: 1.794, z: 0}
-  m_LocalScale: {x: 0.3078623, y: 0.27374923, z: 1}
+  m_LocalPosition: {x: 0.498, y: 0.332, z: 0}
+  m_LocalScale: {x: 1.6260166, y: 1.3101577, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591e9ef771548cb4fbbdb3f0dc45d39a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 1423424989934414, guid: e7bb0bf985a57d24aae92f84497b1fd0, type: 2}
+  effect: {fileID: 1426248378694038, guid: 7acbbaaa11eccb747901000be190ef69, type: 2}
   speedUp: 2
   rateSpeed: 1
 --- !u!212 &212514574336973004
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1590627749
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300026, guid: f01b6d202a487b44fa0f7d7c925a2390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

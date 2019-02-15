@@ -10,22 +10,21 @@ public class PlayerController : MonoBehaviour
     public float Speed=0.5f;
     private float vertical;
     private float horizontal;
-    [SerializeField] public float limit = 0.7f;
+    [SerializeField] float limit = 0.7f;
     Rigidbody2D rigid;
     private Vector2 moveDirection;
-    //private Vector2 moveDirection1;
     float rotationAngle;
     float smoothTime = 1.0f;
     Quaternion desiredRotation;
     public float RateOfFire = 1.5f;
     private float nextF = 0.0f;
     public ScoreSystem score;
-    public bool update = false;
+    bool update = false;
+    
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
-        GameObject obj = GameObject.Find("ScoreSystem");
-        score = obj.GetComponent<ScoreSystem>();
+        
     }
     
         
@@ -36,7 +35,7 @@ public class PlayerController : MonoBehaviour
         vertical = Input.GetAxisRaw("Vertical");
         GetInput1();
         desiredRotation = Quaternion.Euler(0, 0, rotationAngle);
-        //IsDead();
+        
         if (!update)
         {
 
@@ -101,6 +100,7 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.M) && Time.time > nextF)
         {
+
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
         }
@@ -112,11 +112,6 @@ public class PlayerController : MonoBehaviour
        rigid.velocity = new Vector2((horizontal * Speed), (vertical * Speed));
     }
 
-    /*private void OnDestroy()
-    {
-        score.AddPtsP2();
-        //SceneManager.LoadScene(2);
-    }*/
     public void IsDead()
     {
         if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
@@ -126,5 +121,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("adding1");
         }
     }
+
 }
 
