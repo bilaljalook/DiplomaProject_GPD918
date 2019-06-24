@@ -18,30 +18,8 @@ public class Shell : MonoBehaviour {
     {
         
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
-        FindTheShooter();
-    }
-    void FindTheShooter()
-    {
         
-        Transform par = BarrelPoint.parent;
-
-        if (par.CompareTag("Player1")==true)
-        {
-            if (GameObject.FindGameObjectWithTag("Star")==true)
-            {
-                SelectShooter = true;
-
-            }
-        }
-        else if (par.CompareTag("Player2")==true)
-        {
-
-            if (GameObject.FindGameObjectWithTag("Star") == true)
-            {
-                SelectShooter = false;
-
-            }
-        }
     }
-   
+    
+    
 }

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController2 : MonoBehaviour
 {
-    //TODO modify the tank to make it faster with slow fire rate and 3 health bars
-    //TODO player select
+    //TODO clean the serialized field in all scripts
+   
     [SerializeField] public float Speed = 0.5f;
     private float vertical1;
     private float horizontal1;
@@ -17,7 +17,7 @@ public class PlayerController2 : MonoBehaviour
     float rotationAngle;
     float smoothTime = 1.0f;
     Quaternion desiredRotation;
-    public float RateOfFire = 1.5f;
+    [SerializeField] public float RateOfFire = 1.5f;
     private float nextF = 0.0f;
     public ScoreSystem score;
     bool update = false;
@@ -107,7 +107,8 @@ public class PlayerController2 : MonoBehaviour
         {
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
-            
+            FindObjectOfType<Shell>().SelectShooter = false;
+
         }
     }
     public void Moving()

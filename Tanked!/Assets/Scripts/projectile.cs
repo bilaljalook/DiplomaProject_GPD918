@@ -23,13 +23,12 @@ public class projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         TankBlueprint Tank = collision.GetComponent<TankBlueprint>();
-        //par.transform.parent = obj.transform;
-        //Debug.Log(collision+"projectile*****");
+        
         if (Tank!=null)
         {
             Tank.TakeDamage(1);
         }
-        //Debug.Log(gameObject);
+        
         
         if (collision.name == ("star") )
         {
@@ -47,7 +46,8 @@ public class projectile : MonoBehaviour
            
 
         }
-        
+
+        Debug.Log("Projectile//: "+collision.name);
         //Instantiate(explosionEffect, transform.position, transform.rotation);
 
         Destroy(gameObject);

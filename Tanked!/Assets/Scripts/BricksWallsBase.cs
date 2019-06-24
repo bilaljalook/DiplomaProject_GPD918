@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class BricksWallsBase : MonoBehaviour {
     //get the star to bes destroyed corectly and go to the next scene, connect it with the score system
     [SerializeField] GameObject Star;
-
+    //Collider2D col;
     InputControl scene;
    
 	// Use this for initialization
@@ -25,11 +25,11 @@ public class BricksWallsBase : MonoBehaviour {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Collider2D col;
         projectile projectile = collision.GetComponent<projectile>();
-        
 
-         BlockDestroyed();
-           
+        Debug.Log("Star Col//: " + collision.gameObject.tag);
+        BlockDestroyed();
         if (gameObject.name=="star")
         {
             SceneManager.LoadScene(2);

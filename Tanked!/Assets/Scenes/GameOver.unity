@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 1602772056}
-  selectedGameObject: {fileID: 974235932}
+  selectedGameObject: {fileID: 1096581716}
 --- !u!1 &447468636
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +867,6 @@ GameObject:
   - component: {fileID: 449168700}
   - component: {fileID: 974235935}
   - component: {fileID: 974235934}
-  - component: {fileID: 974235933}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -875,20 +874,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &974235933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114974921923041162, guid: 79d3c5cbd49a4e94d96822f96233c8b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 974235932}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b1994f4ea58a3349bac3067a248b83e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventSystem: {fileID: 1602772056}
-  selectedGameObject: {fileID: 974235932}
 --- !u!114 &974235934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,7 +923,6 @@ GameObject:
   - component: {fileID: 1096581721}
   - component: {fileID: 1096581720}
   - component: {fileID: 1096581719}
-  - component: {fileID: 1096581718}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -966,17 +950,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1096581718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1096581716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c9320c1b6e78f94b894aeb4e8f9f021, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1096581719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,7 +1010,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6686cefc365d2e64fa8f2beeb08db8c9, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 

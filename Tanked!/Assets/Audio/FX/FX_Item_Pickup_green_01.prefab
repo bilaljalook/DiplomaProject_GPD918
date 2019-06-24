@@ -26,7 +26,6 @@ GameObject:
   m_Component:
   - component: {fileID: 414634}
   - component: {fileID: 8243326}
-  - component: {fileID: 11480680}
   m_Layer: 15
   m_Name: Soundfx
   m_TagString: Untagged
@@ -44,7 +43,6 @@ GameObject:
   - component: {fileID: 407590}
   - component: {fileID: 19873810}
   - component: {fileID: 19959996}
-  - component: {fileID: 11419836}
   m_Layer: 15
   m_Name: FX_Item_Pickup_green_01
   m_TagString: Shield
@@ -101,7 +99,8 @@ AudioSource:
   m_GameObject: {fileID: 113854}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243703557674000036, guid: af3be46b213418b4fb0f84c50c1f069c,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 914fa7ccbf187fd4698038b7d14d7e15, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -188,31 +187,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &11419836
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4c62a816502d142973c85db911d6ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeDeactive: 3
-  isFollow: 0
-  isLiveAllTime: 0
---- !u!114 &11480680
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 113854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b30047a908e8394b87a19540bbdf01a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!198 &19812178
 ParticleSystem:
   m_ObjectHideFlags: 1

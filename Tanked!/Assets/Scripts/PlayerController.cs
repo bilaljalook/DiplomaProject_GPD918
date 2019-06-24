@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    //TODO modify the tank to make slower and faster fire rate plus 4 health bars
-    public float Speed=0.5f;
+
+    [SerializeField] public float Speed=0.5f;
     private float vertical;
     private float horizontal;
     [SerializeField] float limit = 0.7f;
@@ -16,10 +16,11 @@ public class PlayerController : MonoBehaviour
     float rotationAngle;
     float smoothTime = 1.0f;
     Quaternion desiredRotation;
-    public float RateOfFire = 1.5f;
+    [SerializeField] public float RateOfFire = 1.5f;
     private float nextF = 0.0f;
     public ScoreSystem score;
     bool update = false;
+    public GameObject SpawnPoint;
     
     private void Start()
     {
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         
         moveDirection = Vector2.zero;
         float rotationAngle;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.JoystickButton8))
         {
 
             moveDirection += Vector2.up;
@@ -103,6 +104,7 @@ public class PlayerController : MonoBehaviour
 
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
+            FindObjectOfType<Shell>().SelectShooter = true;
         }
 
 

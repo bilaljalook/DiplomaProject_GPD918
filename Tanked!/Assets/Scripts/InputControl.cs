@@ -5,7 +5,16 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+#if UNITY_EDITOR
+public class DeletePlayerPrefsScript : UnityEditor.EditorWindow
+{
+    [MenuItem("Window/Delete PlayerPrefs (All)")]
+    static void DeleteAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+}
+#endif
 public class InputControl : MonoBehaviour
 {
     //TODO transfer all ButtonControl related object in the engine to Input control
@@ -16,6 +25,9 @@ public class InputControl : MonoBehaviour
     private bool buttonSelected=false;
 
     public static bool GamePause = false;
+
+    
+
 
 	// Use this for initialization
 	void Start ()
@@ -79,12 +91,21 @@ public class InputControl : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(Main);
     }
-    public class DeletePlayerPrefsScript : UnityEditor.EditorWindow
+
+   
+
+    public void FullScreen(bool isFull)
     {
-        [MenuItem("Window/Delete PlayerPrefs (All)")]
-        static void DeleteAllPlayerPrefs()
+        //Screen.fullScreen = isFull;
+        if (isFull)
         {
-            PlayerPrefs.DeleteAll();
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
         }
     }
+   
+
 }
