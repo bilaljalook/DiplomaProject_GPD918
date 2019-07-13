@@ -1,25 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Shell : MonoBehaviour {
+public class Shell : MonoBehaviour
+{
+    [SerializeField] private Transform BarrelPoint;
+    [SerializeField] private GameObject ProPre;
 
-    [SerializeField] Transform BarrelPoint;
-    [SerializeField] GameObject ProPre;
-    
     //[SerializeField] public GameObject ShooterPlayer;
     public bool SelectShooter;
-    
+
     // Update is called once per frame
-    void Update () {
-        
-	}
+    private void Update()
+    {
+    }
+
     public void Shoot()
     {
-        
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
-        
     }
-    
-    
 }

@@ -1,46 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class TankBlueprint : MonoBehaviour {
+public class TankBlueprint : MonoBehaviour
+{
     //TODO clean up the code here
 
     public int health;
     public int NumHealth;
-    
+
     public Image[] hearts;
     public Sprite MaxHealth;
     public Sprite noHealth;
     public GameObject Tank;
-    public ScoreSystem score;
+    //public ScoreSystem score;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         GameObject obj = GameObject.Find("ScoreSystem");
-        score = obj.GetComponent<ScoreSystem>();
+        //score = obj.GetComponent<ScoreSystem>();
         HealthBar();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         HealthBar();
-       // CheckHealth();
-	}
-    public void TakeDamage(int dmg=1)
+    }
+    public void TakeDamage(int dmg = 1)
     {
-        
-         health = health - dmg;
-         if (health == 0)
-         {
-            health = health - dmg;
+
+        health = health - dmg;
+        if (health == 0)
+        {
             Die();
-          
-         }
-        
+
+        }
+
     }
     public void HealthBar()
     {
@@ -70,7 +67,7 @@ public class TankBlueprint : MonoBehaviour {
     }
     void Die()
     {
-        
+
         Tank.GetComponent<SpriteRenderer>().enabled = false;
         Tank.GetComponent<Collider2D>().enabled = false;
 

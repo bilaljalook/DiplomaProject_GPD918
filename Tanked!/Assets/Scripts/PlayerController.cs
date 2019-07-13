@@ -1,128 +1,102 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
-
+//TODO fix the movement bug when pressing to direction at the same time.
+//TODO add the second player here
+//TODO Finish the input of the player in unity editor
+//TODO The score system need get a reference to the playerId and put it in the gamemanager
 public class PlayerController : MonoBehaviour
 {
-
-    [SerializeField] public float Speed=0.5f;
-    private float vertical;
-    private float horizontal;
-    [SerializeField] float limit = 0.7f;
-    Rigidbody2D rigid;
-    private Vector2 moveDirection;
-    float rotationAngle;
-    float smoothTime = 1.0f;
-    Quaternion desiredRotation;
+    public string PlayerId;
+    [SerializeField] public float Speed = 0.5f;
     [SerializeField] public float RateOfFire = 1.5f;
+    [SerializeField] GameObject PlayerShield;
+
+    Shield playerSH;
+    private Rigidbody2D rigid;
+    private Vector2 moveDirection;
+    private float rotationAngle;
     private float nextF = 0.0f;
-    public ScoreSystem score;
-    bool update = false;
+    //public ScoreSystem score;
+    private bool update = false;
     public GameObject SpawnPoint;
-    
+
     private void Start()
     {
+        
         rigid = GetComponent<Rigidbody2D>();
-        
+        PlayerId = PlayerId + " ";
     }
-    
-        
+
     private void Update()
     {
-        
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
-        GetInput1();
-        desiredRotation = Quaternion.Euler(0, 0, rotationAngle);
-        
+        GetInput();
+
         if (!update)
         {
-
             IsDead();
         }
+        Moving();
     }
-    private void FixedUpdate()
-    {
-        if (horizontal!= 0 && vertical!=0)
-        {
-            Moving();
-        }
-        else
-        {
-            Moving();
-        }
 
-    }
-    private void GetInput1()
+    private void GetInput()
     {
-        
         moveDirection = Vector2.zero;
-        float rotationAngle;
-        if (Input.GetKey(KeyCode.W) | Input.GetKey(KeyCode.JoystickButton8))
-        {
 
+        float rotationAngle = transform.rotation.eulerAngles.z;
+
+        if (Input.GetButton(PlayerId + "Up"))
+        {
             moveDirection += Vector2.up;
-            
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
             rotationAngle = 90;
-            rigid.transform.Rotate(0,0,rotationAngle);
-            
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetButton(PlayerId + "Down"))
         {
             moveDirection += Vector2.down;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionX;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
             rotationAngle = -90;
-            rigid.transform.Rotate(0, 0, rotationAngle);
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetButton(PlayerId + "Left"))
         {
             moveDirection += Vector2.left;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
             rotationAngle = 180;
-            rigid.transform.Rotate(0, 0, rotationAngle);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetButton(PlayerId + "Right"))
         {
             moveDirection += Vector2.right;
-            rigid.constraints = RigidbodyConstraints2D.None;
-            rigid.constraints = RigidbodyConstraints2D.FreezePositionY;
-            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, smoothTime);
             rotationAngle = 0;
-            rigid.transform.Rotate(0, 0, rotationAngle);
         }
-        if (Input.GetKeyDown(KeyCode.M) && Time.time > nextF)
-        {
+        transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
+        if (Input.GetButton(PlayerId+ "Fire" ) && Time.time > nextF)
+        {
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
             FindObjectOfType<Shell>().SelectShooter = true;
         }
-
-
     }
+
     public void Moving()
     {
-       rigid.velocity = new Vector2((horizontal * Speed), (vertical * Speed));
+        rigid.velocity = moveDirection * Speed * Time.deltaTime;
     }
 
     public void IsDead()
     {
         if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
         {
-            score.AddPtsP2();
+            //score.AddPtsP2();
             update = true;
-            Debug.Log("adding1");
+            //Debug.Log("adding1");
         }
     }
-
+    public void Shield_On()
+    {
+        Debug.Log("Worked");
+        
+        playerSH = PlayerShield.GetComponent<Shield>();
+        playerSH.ShieldOn();
+        //Shield.GetComponent<GameObject>().SetActive(true);
+        //Shield shield;
+        // shiel = shield.GetComponent<Shield>();
+        //FindObjectOfType<Shield>().ShieldOn();
+    }
 }
-

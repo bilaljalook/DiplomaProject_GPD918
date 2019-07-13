@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 61179044400090772}
   - component: {fileID: 114693169115502328}
   - component: {fileID: 114303999691176496}
-  - component: {fileID: 114861507540540552}
+  - component: {fileID: 834376658}
   m_Layer: 12
   m_Name: Player2
   m_TagString: Player2
@@ -129,13 +129,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 1
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61179044400090772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -183,7 +183,6 @@ MonoBehaviour:
   MaxHealth: {fileID: 21300028, guid: f01b6d202a487b44fa0f7d7c925a2390, type: 3}
   noHealth: {fileID: 21300060, guid: d7b564c6c1ef67348a252a6284685a73, type: 3}
   Tank: {fileID: 1633207663974190}
-  score: {fileID: 0}
 --- !u!114 &114303999691176496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +198,7 @@ MonoBehaviour:
   BarrelPoint: {fileID: 4709582698840024}
   ProPre: {fileID: 1875157529174392, guid: b4da5b75cb63bb943a5f76cfcbfd0836, type: 3}
   SelectShooter: 0
---- !u!114 &114861507540540552
+--- !u!114 &834376658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,10 +207,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1633207663974190}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cdc8758a4bcbce47b88c2872202a991, type: 3}
+  m_Script: {fileID: 11500000, guid: e0dd3cde7fa5f1a43940a6e095f1f968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 30
-  limit: 0.7
-  RateOfFire: 1
-  score: {fileID: 0}
+  PlayerId: Player2
+  Speed: 1500
+  RateOfFire: 1.5
+  PlayerShield: {fileID: 0}
+  SpawnPoint: {fileID: 0}
