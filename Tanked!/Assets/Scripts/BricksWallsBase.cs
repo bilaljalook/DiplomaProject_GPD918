@@ -6,9 +6,6 @@ public class BricksWallsBase : MonoBehaviour
     //get the star to bes destroyed corectly and go to the next scene, connect it with the score system
     [SerializeField] private GameObject Star;
 
-    
-  
-
     // Use this for initialization
     private void Start()
     {
@@ -23,12 +20,10 @@ public class BricksWallsBase : MonoBehaviour
     private void BlockDestroyed()
     {
         Destroy(gameObject);
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         projectile projectile = collision.GetComponent<projectile>();
 
         //Debug.Log("Star Col//: " + collision.gameObject.tag);

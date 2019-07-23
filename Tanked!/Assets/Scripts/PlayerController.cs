@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 //TODO fix the movement bug when pressing to direction at the same time.
-//TODO add the second player here
 //TODO Finish the input of the player in unity editor
 //TODO The score system need get a reference to the playerId and put it in the gamemanager
 public class PlayerController : MonoBehaviour
@@ -12,17 +11,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject PlayerShield;
 
     Shield playerSH;
-    private Rigidbody2D rigid;
-    private Vector2 moveDirection;
-    private float rotationAngle;
-    private float nextF = 0.0f;
-    //public ScoreSystem score;
-    private bool update = false;
+    Rigidbody2D rigid;
+    Vector2 moveDirection;
+    float rotationAngle;
+    float nextF = 0.0f;
+
+    public ScoreSystem score;
+    //private bool update = false;
+
     public GameObject SpawnPoint;
 
     private void Start()
     {
-        
         rigid = GetComponent<Rigidbody2D>();
         PlayerId = PlayerId + " ";
     }
@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
 
-        if (!update)
+       /* if (!update)
         {
             IsDead();
-        }
+        }*/
         Moving();
     }
 
@@ -66,11 +66,10 @@ public class PlayerController : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
-        if (Input.GetButton(PlayerId+ "Fire" ) && Time.time > nextF)
+        if (Input.GetButton(PlayerId + "Fire") && Time.time > nextF)
         {
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
-            FindObjectOfType<Shell>().SelectShooter = true;
         }
     }
 
@@ -81,22 +80,25 @@ public class PlayerController : MonoBehaviour
 
     public void IsDead()
     {
-        if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
-        {
-            //score.AddPtsP2();
-            update = true;
-            //Debug.Log("adding1");
-        }
+        //if (gameObject.GetComponent<SpriteRenderer>().enabled == false && gameObject.CompareTag("Player1")==null)
+        //{
+        //    score.AddPtsP2();
+        //    update = true;
+        //    Debug.Log("playedr2 up");
+        //}
+        //else if (gameObject.GetComponent<SpriteRenderer>().enabled==false&&PlayerId=="Player2")
+        //{
+        //    score.AddPtsP1();
+        //    update = true;
+        //    Debug.Log("Player1 up");
+        //}
     }
+
     public void Shield_On()
     {
-        Debug.Log("Worked");
-        
         playerSH = PlayerShield.GetComponent<Shield>();
         playerSH.ShieldOn();
-        //Shield.GetComponent<GameObject>().SetActive(true);
-        //Shield shield;
-        // shiel = shield.GetComponent<Shield>();
-        //FindObjectOfType<Shield>().ShieldOn();
+        
+        //Debug.Log("Worked");
     }
 }

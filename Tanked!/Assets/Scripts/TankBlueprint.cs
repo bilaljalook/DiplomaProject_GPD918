@@ -13,32 +13,31 @@ public class TankBlueprint : MonoBehaviour
     public Sprite MaxHealth;
     public Sprite noHealth;
     public GameObject Tank;
-    //public ScoreSystem score;
+    public ScoreSystem score;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         GameObject obj = GameObject.Find("ScoreSystem");
-        //score = obj.GetComponent<ScoreSystem>();
+        score = obj.GetComponent<ScoreSystem>();
         HealthBar();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         HealthBar();
     }
+
     public void TakeDamage(int dmg = 1)
     {
-
         health = health - dmg;
         if (health == 0)
         {
             Die();
-
         }
-
     }
+
     public void HealthBar()
     {
         if (health > NumHealth)
@@ -65,18 +64,27 @@ public class TankBlueprint : MonoBehaviour
             }
         }
     }
-    void Die()
+
+    private void Die()
     {
+        //Tank.GetComponent<SpriteRenderer>().enabled = false;
+        //Tank.GetComponent<Collider2D>().enabled = false;
+        Tank.SetActive(false);
+        if (Tank.CompareTag("Player1")==false)
+        {
+        score.AddPtsP1();
 
-        Tank.GetComponent<SpriteRenderer>().enabled = false;
-        Tank.GetComponent<Collider2D>().enabled = false;
-
+        }
+        else if (Tank.CompareTag("Player2")==false)
+        {
+        score.AddPtsP2();
+        }
+        Destroy(gameObject);
         NextScene();
     }
+
     public void NextScene()
     {
         SceneManager.LoadScene(2);
     }
 }
-
-

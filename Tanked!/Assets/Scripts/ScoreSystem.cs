@@ -2,15 +2,13 @@
 using UnityEngine;
 
 //TODO Change the scoring system and add a game manager to save the score on it.
+//TODO+ connecting this script with player controller to know which player is having the point
 public class ScoreSystem : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI TextP1;
-    [SerializeField] private TextMeshProUGUI TextP2;
-    [SerializeField] private TextMeshProUGUI winner;
+    [SerializeField] TextMeshProUGUI TextP1;
+    [SerializeField] TextMeshProUGUI TextP2;
+    [SerializeField] TextMeshProUGUI winner;
 
-
-   // public GameManager scoreManager1;
-   // public GameManager scoreManager2;
 
     public GameObject P1;
     public GameObject P2;
@@ -27,8 +25,6 @@ public class ScoreSystem : MonoBehaviour
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
 
-       
-       
         winner.text = winner.ToString();
     }
 
@@ -38,12 +34,21 @@ public class ScoreSystem : MonoBehaviour
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
         Scoreboared();
+
+       /* if (P1.GetComponent<SpriteRenderer>().enabled==false)
+        {
+            AddPtsP2();
+        }
+        else if (P2.GetComponent<SpriteRenderer>().enabled==false)
+        {
+            AddPtsP1();
+        }*/
     }
 
     public void AddPtsP1()
     {
         score1 = score1 + 1;
-        //Debug.Log("added 1");
+        Debug.Log("added 1");
 
         TextP1.text = P1s + score1.ToString();
     }
@@ -51,14 +56,9 @@ public class ScoreSystem : MonoBehaviour
     public void AddPtsP2()
     {
         score2 += 1;
-        //Debug.Log("added 2");
+        Debug.Log("added 2");
 
         TextP2.text = P2s + score2.ToString();
-    }
-
-    private void OnDestroy()
-    {
-        saveScore();
     }
 
     public void Scoreboared()
@@ -77,21 +77,5 @@ public class ScoreSystem : MonoBehaviour
         {
             winner.text = "no one won";
         }
-    }
-
-    public void saveScore()
-    {
-       
-
-       
-
-        //PlayerPrefs.SetInt("p1", score1);
-        //PlayerPrefs.SetInt("p2", score2);
-        //Debug.Log("Save");
-    }
-
-    public void OnApplicationQuit()
-    {
-       // PlayerPrefs.DeleteAll();
     }
 }

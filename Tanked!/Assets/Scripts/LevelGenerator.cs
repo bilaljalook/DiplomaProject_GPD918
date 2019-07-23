@@ -1,151 +1,94 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public Transform[] startingPosition;
-    public GameObject[] Squares; //indexing 0 is for square1, 1 square 2, 2 s3, 3 s4
+    [SerializeField] private Transform startPosition;
+    [SerializeField] public GameObject[] Squares; //TODO Index the square to get the randoms u need
 
-    private int Dir;
-    public float amount;
+    [SerializeField] private float movementAmount;
+    private int SpawnDirection = 1;
 
+    [SerializeField] private float startTimeToSquare = 0.2f;
     private float TimeToSquare;
-    [SerializeField] float startTimeNextSquare=0.25f;
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public bool stopGen;
+    //[SerializeField] float minX;
+    //[SerializeField] float maxX;
+    [SerializeField] private float maxY;
 
-    [SerializeField] LayerMask SquareLayer;
+    public bool StopGen;
 
-    int CalculateDown;
-    void Start()
+    private void Start()
     {
-        int RndStartPos = Random.Range(0, startingPosition.Length);
-        transform.position = startingPosition[RndStartPos].position;
+        transform.position = startPosition.position;
         Instantiate(Squares[0], transform.position, Quaternion.identity);
-
-        Dir = Random.Range(1, 6);
     }
 
     private void Update()
     {
-        if (TimeToSquare <= 0 && stopGen == false)
+        if (TimeToSquare <= 0 && StopGen == false)
         {
-            NextDir();
-            TimeToSquare = startTimeNextSquare;
+            MoveSquare();
+            TimeToSquare = startTimeToSquare;
         }
         else
         {
             TimeToSquare -= Time.deltaTime;
         }
-
     }
 
-    private void NextDir()
+    private void MoveSquare()
     {
-        if (Dir == 1 || Dir == 2)//to the right
+        if (SpawnDirection == 1) // Square Generate right
         {
-            if (transform.position.x < maxX)
-            {
-                CalculateDown = 0;
+            /*Vector2 Pos = new Vector2(transform.position.x + movementAmount, transform.position.y);
+            transform.position = Pos;*/
 
-
-                Vector2 Pos = new Vector2(transform.position.x + amount, transform.position.y);
-                transform.position = Pos;
-
-                int rand = Random.Range(0, Squares.Length);
-                Instantiate(Squares[rand], transform.position, Quaternion.identity);
-
-                Dir = Random.Range(1, 6);
-
-                if (Dir == 3)
-                {
-                    Dir = 2;
-                }
-                else if (Dir == 4)
-                {
-                    Dir = 5;
-                }
-            }
-                else
-                {
-                    Dir = 5;
-                }
-            
+            transform.position += Vector3.right * movementAmount;
+            int random = Random.Range(0, Squares.Length);
+            Instantiate(Squares[random], transform.position, Quaternion.identity);
+            SpawnDirection++;
         }
-
-        else if (Dir == 3 || Dir == 4)//to the left
+        else if (SpawnDirection == 5) // Square Generate left
         {
-            if (transform.position.x > maxX)
+            /* Vector2 Pos = new Vector2(transform.position.x - movementAmount, transform.position.y);
+             transform.position = Pos;*/
+
+            transform.position += Vector3.left * movementAmount;
+            int random = Random.Range(0, Squares.Length);
+            Instantiate(Squares[random], transform.position, Quaternion.identity);
+            SpawnDirection++;
+        }
+        else if (SpawnDirection >= 2 && SpawnDirection < 5) // Square Generate down
+        {
+            /*Vector2 Pos = new Vector2(transform.position.x, transform.position.y - movementAmount);
+            transform.position = Pos;*/
+
+            transform.position += Vector3.down * movementAmount;
+            int random = Random.Range(0, Squares.Length);
+            Instantiate(Squares[random], transform.position, Quaternion.identity);
+
+            SpawnDirection++;
+        }
+        else if (SpawnDirection >= 6) // Generate Up
+        {
+            if (transform.position.y < maxY)
             {
-                CalculateDown = 0;
+                /*Vector2 Pos = new Vector2(transform.position.x, transform.position.y + movementAmount);
+                transform.position = Pos;*/
 
-                Vector2 Pos = new Vector2(transform.position.x - amount, transform.position.y);
-                transform.position = Pos;
+                transform.position += Vector3.up * movementAmount;
 
-                int rand = Random.Range(0, Squares.Length);
-                Instantiate(Squares[rand], transform.position, Quaternion.identity);
+                int random = Random.Range(0, Squares.Length);
+                Instantiate(Squares[random], transform.position, Quaternion.identity);
 
-                Dir = Random.Range(3, 6);
+                SpawnDirection++;
             }
             else
             {
-                Dir = 5;
+                StopGen = true; //Stop Generating
             }
-            
-        }
-        else if (Dir == 5)//to the down
-        {
-            CalculateDown++;
-
-
-
-            if (transform.position.y > minY)
-            {
-                Collider2D SquareDetect = Physics2D.OverlapCircle(transform.position, 1, SquareLayer);
-
-                if (SquareDetect.GetComponent<SquareSelect>().type!=1&&SquareDetect.GetComponent<SquareSelect>().type!=3)
-                {
-
-                    if (CalculateDown>=2)
-                    {
-                        SquareDetect.GetComponent<SquareSelect>().SquareDestroy();
-
-                        Instantiate(Squares[3], transform.position, Quaternion.identity);
-                    }
-                    else
-                    {
-                        SquareDetect.GetComponent<SquareSelect>().SquareDestroy();
-
-                        int RandomSelectRoom = Random.Range(1, 4);
-                        if (RandomSelectRoom == 2)
-                        {
-                            RandomSelectRoom = 1;
-                        }
-                        Instantiate(Squares[RandomSelectRoom], transform.position, Quaternion.identity);
-                    }
-
-                   
-                }
-
-                Vector2 Pos = new Vector2(transform.position.x, transform.position.y - amount);
-                transform.position = Pos;
-
-                int rand = Random.Range(2, 4);
-                Instantiate(Squares[rand], transform.position, Quaternion.identity);
-
-                Dir = Random.Range(1, 6);
-            }
-            else
-            {
-                stopGen = true;
-            }
-            
         }
 
-       
+        //Instantiate(Squares[0], transform.position, Quaternion.identity);
     }
 }

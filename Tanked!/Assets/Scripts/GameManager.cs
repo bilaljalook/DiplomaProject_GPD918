@@ -8,12 +8,10 @@ public class GameManager : MonoBehaviour
     public static int scoreM1;
     public static int scoreM2;
 
-    void Awake()
+    private void Awake()
     {
-       
-       
         if (Instance == null)
-        
+
         {
             Instance = this;
         }
@@ -21,17 +19,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-            DontDestroyOnLoad(this);
-
-        
+        DontDestroyOnLoad(this);
     }
+
     private void Update()
     {
-        
     }
 
     private void KeepScore()
     {
-        
     }
 }

@@ -98,7 +98,7 @@ public class PlayerController2 : MonoBehaviour
         {
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
-            FindObjectOfType<Shell>().SelectShooter = false;
+            //FindObjectOfType<Shell>().SelectShooter = false;
         }
     }
 

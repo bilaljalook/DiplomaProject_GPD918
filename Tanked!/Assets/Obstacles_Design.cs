@@ -25,6 +25,6 @@ public class Obstacles_Design : MonoBehaviour
     {
         projectile pro = collision.gameObject.GetComponent<projectile>();
 
-       // Debug.Log(collision);
+        // Debug.Log(collision);
     }
 }

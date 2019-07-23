@@ -12,19 +12,13 @@ public class PowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
-    //Shield Shield;
-
-    //Shield sh;
-
-    // Use this for initialization
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        //Shield = GetComponent<Shield>();
+        
     }
 
-    // Update is called once per frame
     private void Update()
     {
     }
@@ -80,21 +74,14 @@ public class PowerUps : MonoBehaviour
         Destroy(gameObject);
     }
 
-   
     private IEnumerator PickPowerShield(PlayerController player)
     {
-        //PlayerController player = collision.GetComponent<PlayerController>();
+        //Debug.Log(player.name);
         DisableComponentsAndPlayEffect();
-        //FindObjectOfType<Shield>().ShieldOn();
-        Debug.Log(player.name);
-        
-        
-        //Shield.ShieldOn();
-        player.Shield_On();
-        //player = Shield.getcomponent<gameObject>().SetActive(true);
-        //PlayerController _Player=player.GetComponent<PlayerController>();
-        //_Player.ShieldOn();
 
-        yield return 0;// new WaitForSeconds(2);
+        player.Shield_On();
+        
+
+        yield return 0;
     }
 }

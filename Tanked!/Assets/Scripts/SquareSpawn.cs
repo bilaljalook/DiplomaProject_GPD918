@@ -1,23 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SquareSpawn : MonoBehaviour
 {
-    [SerializeField] LayerMask RandomSquare;
-    public LevelGenerator Gen;//maybe chnage to private
+    [SerializeField] private GameObject[] objects;
 
-    void Update()
+    private void Start()
     {
-        Collider2D SquareDetection = Physics2D.OverlapCircle(transform.position, 1, RandomSquare);
-
-        if (SquareDetection==null&&Gen.stopGen==true)
-        {
-            //Random Squares
-            int Rand = Random.Range(0, Gen.Squares.Length);
-            Instantiate(Gen.Squares[Rand], transform.position, Quaternion.identity);
-
-            Destroy(gameObject);
-        }
+        int Randomize = Random.Range(0, objects.Length);
+        GameObject instance = (GameObject)Instantiate(objects[Randomize], transform.position, Quaternion.identity);
+        instance.transform.parent = transform;
     }
 }
