@@ -6,8 +6,8 @@ public class PowerUps : MonoBehaviour
     //TODO make the declarations of the script private for the ones you dont need
     public ParticleSystem effect;
 
-    public float speedUp = 2;
-    public float rateSpeed = 1;
+    float speedUp = 3500;
+    float rateSpeed = 1;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
@@ -16,7 +16,6 @@ public class PowerUps : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        
     }
 
     private void Update()
@@ -76,11 +75,10 @@ public class PowerUps : MonoBehaviour
 
     private IEnumerator PickPowerShield(PlayerController player)
     {
-        //Debug.Log(player.name);
+        //Debug.Log(player.name); //to check which player getting the shield
         DisableComponentsAndPlayEffect();
 
         player.Shield_On();
-        
 
         yield return 0;
     }

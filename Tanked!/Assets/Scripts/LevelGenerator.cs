@@ -3,7 +3,7 @@
 public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Transform startPosition;
-    [SerializeField] public GameObject[] Squares; //TODO Index the square to get the randoms u need
+    [SerializeField] public GameObject[] Squares; // index S1(0-3), S2(4-7), S3,4,7,8(8-17), S5(18-21), S6(22-25)
 
     [SerializeField] private float movementAmount;
     private int SpawnDirection = 1;
@@ -20,7 +20,8 @@ public class LevelGenerator : MonoBehaviour
     private void Start()
     {
         transform.position = startPosition.position;
-        Instantiate(Squares[0], transform.position, Quaternion.identity);
+        Instantiate(Squares[Random.Range(0, 4)], transform.position, Quaternion.identity);
+         //Time.timeScale = 0f;
     }
 
     private void Update()
@@ -38,47 +39,47 @@ public class LevelGenerator : MonoBehaviour
 
     private void MoveSquare()
     {
-        if (SpawnDirection == 1) // Square Generate right
+        if (SpawnDirection == 1) //Generate Square2, moving Right
         {
-            /*Vector2 Pos = new Vector2(transform.position.x + movementAmount, transform.position.y);
-            transform.position = Pos;*/
-
             transform.position += Vector3.right * movementAmount;
-            int random = Random.Range(0, Squares.Length);
+
+            int random = Random.Range(4, 8);
             Instantiate(Squares[random], transform.position, Quaternion.identity);
+
             SpawnDirection++;
         }
-        else if (SpawnDirection == 5) // Square Generate left
+        else if (SpawnDirection == 5) // Generate Square6, moving Left
         {
-            /* Vector2 Pos = new Vector2(transform.position.x - movementAmount, transform.position.y);
-             transform.position = Pos;*/
-
             transform.position += Vector3.left * movementAmount;
-            int random = Random.Range(0, Squares.Length);
+
+            int random = Random.Range(22, 26);
             Instantiate(Squares[random], transform.position, Quaternion.identity);
+
             SpawnDirection++;
         }
-        else if (SpawnDirection >= 2 && SpawnDirection < 5) // Square Generate down
+        else if (SpawnDirection >= 2 && SpawnDirection < 5) // Generate Square3,4,5, moving Down
         {
-            /*Vector2 Pos = new Vector2(transform.position.x, transform.position.y - movementAmount);
-            transform.position = Pos;*/
-
             transform.position += Vector3.down * movementAmount;
-            int random = Random.Range(0, Squares.Length);
-            Instantiate(Squares[random], transform.position, Quaternion.identity);
+            if (SpawnDirection < 4)
+            {
+                int random = Random.Range(8, 18);
+                Instantiate(Squares[random], transform.position, Quaternion.identity);
+            }
+            else if (SpawnDirection < 5)
+            {
+                int random = Random.Range(18, 22);
+                Instantiate(Squares[random], transform.position, Quaternion.identity);
+            }
 
             SpawnDirection++;
         }
-        else if (SpawnDirection >= 6) // Generate Up
+        else if (SpawnDirection >= 6) // Generate Square7,8 , moving Up
         {
             if (transform.position.y < maxY)
             {
-                /*Vector2 Pos = new Vector2(transform.position.x, transform.position.y + movementAmount);
-                transform.position = Pos;*/
-
                 transform.position += Vector3.up * movementAmount;
 
-                int random = Random.Range(0, Squares.Length);
+                int random = Random.Range(8, 18);
                 Instantiate(Squares[random], transform.position, Quaternion.identity);
 
                 SpawnDirection++;
@@ -88,7 +89,5 @@ public class LevelGenerator : MonoBehaviour
                 StopGen = true; //Stop Generating
             }
         }
-
-        //Instantiate(Squares[0], transform.position, Quaternion.identity);
     }
 }

@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     public string PlayerId;
     [SerializeField] public float Speed = 0.5f;
     [SerializeField] public float RateOfFire = 1.5f;
-    [SerializeField] GameObject PlayerShield;
+    [SerializeField] private GameObject PlayerShield;
 
-    Shield playerSH;
-    Rigidbody2D rigid;
-    Vector2 moveDirection;
-    float rotationAngle;
-    float nextF = 0.0f;
+    private Shield playerSH;
+    private Rigidbody2D rigid;
+    private Vector2 moveDirection;
+    private float rotationAngle;
+    private float nextF = 0.0f;
 
     public ScoreSystem score;
     //private bool update = false;
@@ -31,10 +31,10 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
 
-       /* if (!update)
-        {
-            IsDead();
-        }*/
+        /* if (!update)
+         {
+             IsDead();
+         }*/
         Moving();
     }
 
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     {
         playerSH = PlayerShield.GetComponent<Shield>();
         playerSH.ShieldOn();
-        
+
         //Debug.Log("Worked");
     }
 }

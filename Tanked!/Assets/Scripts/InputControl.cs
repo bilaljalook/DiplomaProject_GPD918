@@ -14,6 +14,8 @@ public class InputControl : MonoBehaviour
 
     public static bool GamePause = false;
 
+    static int RoundCount = 0;
+
     // Use this for initialization
     private void Start()
     {
@@ -38,6 +40,7 @@ public class InputControl : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     private void Pause()

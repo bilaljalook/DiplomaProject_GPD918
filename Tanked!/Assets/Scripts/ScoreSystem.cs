@@ -8,7 +8,7 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextP1;
     [SerializeField] TextMeshProUGUI TextP2;
     [SerializeField] TextMeshProUGUI winner;
-
+    [SerializeField] TextMeshProUGUI Rounds;
 
     public GameObject P1;
     public GameObject P2;
@@ -18,12 +18,16 @@ public class ScoreSystem : MonoBehaviour
 
     private string P1s = "P1 : ";
     private string P2s = "P2 : ";
+    string round = "Round ";
 
+    [SerializeField] public static int rCount = 0;
     // Use this for initialization
     private void Start()
     {
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
+
+       // Rounds.text = round + rCount.ToString()+"/3";
 
         winner.text = winner.ToString();
     }
@@ -34,21 +38,21 @@ public class ScoreSystem : MonoBehaviour
         TextP1.text = P1s + score1.ToString();
         TextP2.text = P2s + score2.ToString();
         Scoreboared();
-
-       /* if (P1.GetComponent<SpriteRenderer>().enabled==false)
-        {
-            AddPtsP2();
-        }
-        else if (P2.GetComponent<SpriteRenderer>().enabled==false)
-        {
-            AddPtsP1();
-        }*/
+        Rounds.text = round + rCount.ToString()+"/3";
+        /* if (P1.GetComponent<SpriteRenderer>().enabled==false)
+         {
+             AddPtsP2();
+         }
+         else if (P2.GetComponent<SpriteRenderer>().enabled==false)
+         {
+             AddPtsP1();
+         }*/
     }
 
     public void AddPtsP1()
     {
         score1 = score1 + 1;
-        Debug.Log("added 1");
+        //Debug.Log("added 1");
 
         TextP1.text = P1s + score1.ToString();
     }
@@ -56,7 +60,7 @@ public class ScoreSystem : MonoBehaviour
     public void AddPtsP2()
     {
         score2 += 1;
-        Debug.Log("added 2");
+        //Debug.Log("added 2");
 
         TextP2.text = P2s + score2.ToString();
     }
@@ -77,5 +81,11 @@ public class ScoreSystem : MonoBehaviour
         {
             winner.text = "no one won";
         }
+    }
+
+    public static void RoundCount()
+    {
+        rCount++;
+
     }
 }

@@ -54,12 +54,6 @@ public class ButtonControl : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    public void LoadMain()
-    {
-        //PlayerPrefs.DeleteKey("p1");
-        //PlayerPrefs.DeleteKey("p2");
-    }
-
     public void SetRes(int resIndex)
     {
         Resolution res = resolution[resIndex];

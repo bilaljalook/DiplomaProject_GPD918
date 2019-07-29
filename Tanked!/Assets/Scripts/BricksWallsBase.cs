@@ -30,7 +30,7 @@ public class BricksWallsBase : MonoBehaviour
         BlockDestroyed();
         if (gameObject.name == "star")
         {
-            SceneManager.LoadScene(2);
+            FindObjectOfType<TankBlueprint>().NextScene();
         }
     }
 }

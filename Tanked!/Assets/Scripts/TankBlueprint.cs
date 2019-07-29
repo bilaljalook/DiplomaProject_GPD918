@@ -85,6 +85,18 @@ public class TankBlueprint : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(2);
+       
+        if (ScoreSystem.rCount<2)
+        {
+
+        SceneManager.LoadScene("Rounds");
+        }
+        else if(ScoreSystem.rCount==3)
+        {
+            SceneManager.LoadScene("GameOver");
+            
+        }
+            ScoreSystem.RoundCount();
+        Debug.Log(ScoreSystem.rCount.ToString());
     }
 }
