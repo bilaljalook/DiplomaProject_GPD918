@@ -15,6 +15,8 @@ public class TankBlueprint : MonoBehaviour
     public GameObject Tank;
     public ScoreSystem score;
 
+    //[SerializeField] Animation explodingEffect;
+
     // Use this for initialization
     private void Start()
     {
@@ -80,6 +82,8 @@ public class TankBlueprint : MonoBehaviour
         score.AddPtsP2();
         }
         Destroy(gameObject);
+        //explodingEffect.GetComponent<Animation>();
+        //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
         NextScene();
     }
 

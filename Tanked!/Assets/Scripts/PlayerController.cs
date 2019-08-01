@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 //TODO fix the movement bug when pressing to direction at the same time.
 //TODO Finish the input of the player in unity editor
@@ -21,14 +22,23 @@ public class PlayerController : MonoBehaviour
 
     public GameObject SpawnPoint;
 
+    
+    
+
+    //[SerializeField] GameObject slideFire;
+
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         PlayerId = PlayerId + " ";
+        //slideFire = GetComponent<GameObject>();
+        
     }
 
     private void Update()
     {
+        
+
         GetInput();
 
         /* if (!update)
@@ -75,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     public void Moving()
     {
-        rigid.velocity = moveDirection * Speed * Time.deltaTime;
+        rigid.velocity = moveDirection * Speed * Time.smoothDeltaTime;
     }
 
     public void IsDead()
@@ -101,4 +111,5 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("Worked");
     }
+    
 }

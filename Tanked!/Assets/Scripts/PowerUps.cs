@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+
 public class PowerUps : MonoBehaviour
 {
     //TODO make the declarations of the script private for the ones you dont need
     public ParticleSystem effect;
+    [SerializeField] Animation animEffect;
 
     float speedUp = 3500;
     float rateSpeed = 1;
@@ -12,27 +14,34 @@ public class PowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
+
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+        //GetComponent<Slider>();
     }
 
     private void Update()
     {
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController pc = collision.GetComponent<PlayerController>();
 
+
         if (gameObject.CompareTag("PowerUpSpeed"))
         {
             StartCoroutine(PickPowerSpeed(pc));
+            //pc.PowerUpTimerSpeed();
         }
         else if (gameObject.CompareTag("PowerUpRate"))
         {
             StartCoroutine(PickPowerRate(pc));
+            // pc.PowerUpTimerFire();
+            //FindObjectOfType<PlayerController>().PowerUpTimerFire();
         }
         else if (gameObject.CompareTag("PowerUpShield"))
         {
@@ -45,8 +54,11 @@ public class PowerUps : MonoBehaviour
         spriteRenderer.enabled = false;
         col.enabled = false;
 
-        effect = Instantiate(effect, transform.position, transform.rotation) as ParticleSystem;
-        effect.GetComponent<ParticleSystem>();
+        animEffect.GetComponent<Animation>();
+        animEffect = Instantiate(animEffect, transform.position, transform.rotation);
+        
+       
+        
     }
 
     private IEnumerator PickPowerSpeed(PlayerController player)
@@ -55,7 +67,7 @@ public class PowerUps : MonoBehaviour
 
         player.Speed += speedUp;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         player.Speed -= speedUp;
 
         Destroy(gameObject);
@@ -67,7 +79,7 @@ public class PowerUps : MonoBehaviour
 
         player.RateOfFire -= rateSpeed;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         player.RateOfFire += rateSpeed;
 
         Destroy(gameObject);
@@ -82,4 +94,5 @@ public class PowerUps : MonoBehaviour
 
         yield return 0;
     }
+
 }

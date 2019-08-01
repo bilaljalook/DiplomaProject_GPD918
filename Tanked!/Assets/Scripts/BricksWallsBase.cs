@@ -6,6 +6,8 @@ public class BricksWallsBase : MonoBehaviour
     //get the star to bes destroyed corectly and go to the next scene, connect it with the score system
     [SerializeField] private GameObject Star;
 
+
+    //[SerializeField] Animation explodingEffect;
     // Use this for initialization
     private void Start()
     {
@@ -28,6 +30,8 @@ public class BricksWallsBase : MonoBehaviour
 
         //Debug.Log("Star Col//: " + collision.gameObject.tag);
         BlockDestroyed();
+        //explodingEffect.GetComponent<Animation>();
+        //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
         if (gameObject.name == "star")
         {
             FindObjectOfType<TankBlueprint>().NextScene();
