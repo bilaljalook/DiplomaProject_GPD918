@@ -3,7 +3,16 @@ guid: 97e2827eac0cc4a4cb2f8e0df500a5d3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - TextP1: {fileID: 1781737816085337224, guid: b3d035583468b40408d7010cb957a648,
+      type: 3}
+  - TextP2: {fileID: 8818128908883713030, guid: 092a43cf9ec9598458d1b8e6f5426a7d,
+      type: 3}
+  - winner: {fileID: 114511263966118748, guid: 3b20a0739dfc82f46a2cff22670c5d09, type: 3}
+  - Rounds: {fileID: 5462492738318894712, guid: 1ee3c4d93ca7ae446bea94495afb0621,
+      type: 3}
+  - P1: {fileID: 1070000424357528, guid: f16140cac3a1bc942a3acf923d96fb57, type: 3}
+  - P2: {fileID: 1633207663974190, guid: e7b1a01d2000cf14a8d01c84452eb5ba, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

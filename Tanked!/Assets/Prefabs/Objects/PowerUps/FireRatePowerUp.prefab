@@ -96,6 +96,7 @@ MonoBehaviour:
   effect: {fileID: 198484577714814692, guid: c1a87e61787dc8444819707b0fe3a9fd, type: 3}
   animEffect: {fileID: 111675931517967700, guid: 7acbbaaa11eccb747901000be190ef69,
     type: 3}
+  timer: {fileID: 1492848610569181177, guid: 0aa31e4b1c33dc94181b6dc8f7dadcb3, type: 3}
 --- !u!61 &61467360556541614
 BoxCollider2D:
   m_ObjectHideFlags: 0

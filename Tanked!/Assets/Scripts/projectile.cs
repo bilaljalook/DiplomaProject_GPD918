@@ -25,22 +25,6 @@ public class projectile : MonoBehaviour
             Tank.TakeDamage(1);
         }
 
-       /* if (collision.name == ("star"))
-        {
-            if (FindObjectOfType<Shell>().SelectShooter == true)
-
-            {
-                //  FindObjectOfType<ScoreSystem>().AddPtsP1(); // TODO reference the player Id instead of the select shooter bool, it is a crap.
-            }
-            else if (FindObjectOfType<Shell>().SelectShooter == false)
-            {
-                //FindObjectOfType<ScoreSystem>().AddPtsP2();
-            }
-        }*/
-
-        //Debug.Log("Projectile//: " + collision.name);
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
-
         Destroy(gameObject);
     }
 }

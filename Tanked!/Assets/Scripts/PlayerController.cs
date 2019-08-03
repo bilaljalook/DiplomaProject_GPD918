@@ -18,20 +18,20 @@ public class PlayerController : MonoBehaviour
     private float nextF = 0.0f;
 
     public ScoreSystem score;
-    //private bool update = false;
+    
 
     public GameObject SpawnPoint;
 
     
     
 
-    //[SerializeField] GameObject slideFire;
+    
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         PlayerId = PlayerId + " ";
-        //slideFire = GetComponent<GameObject>();
+        
         
     }
 
@@ -41,10 +41,7 @@ public class PlayerController : MonoBehaviour
 
         GetInput();
 
-        /* if (!update)
-         {
-             IsDead();
-         }*/
+        
         Moving();
     }
 

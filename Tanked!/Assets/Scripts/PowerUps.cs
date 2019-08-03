@@ -14,11 +14,15 @@ public class PowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
-
+    //[SerializeField] GameObject timer;
+    //Timer refTimer;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
+        //refTimer.GetComponent<Timer>();
+        //timer.GetComponent<GameObject>();
+        //refTimer=timer.GetComponent<Timer>();
         //GetComponent<Slider>();
     }
 
@@ -36,11 +40,13 @@ public class PowerUps : MonoBehaviour
         {
             StartCoroutine(PickPowerSpeed(pc));
             //pc.PowerUpTimerSpeed();
+            //refTimer.FillTimer();
         }
         else if (gameObject.CompareTag("PowerUpRate"))
         {
             StartCoroutine(PickPowerRate(pc));
             // pc.PowerUpTimerFire();
+            //refTimer.FillTimer();
             //FindObjectOfType<PlayerController>().PowerUpTimerFire();
         }
         else if (gameObject.CompareTag("PowerUpShield"))
@@ -53,7 +59,9 @@ public class PowerUps : MonoBehaviour
     {
         spriteRenderer.enabled = false;
         col.enabled = false;
-
+        
+        
+        //Timer.FillTimer();
         animEffect.GetComponent<Animation>();
         animEffect = Instantiate(animEffect, transform.position, transform.rotation);
         
@@ -66,7 +74,7 @@ public class PowerUps : MonoBehaviour
         DisableComponentsAndPlayEffect();
 
         player.Speed += speedUp;
-
+        
         yield return new WaitForSeconds(3);
         player.Speed -= speedUp;
 
@@ -78,7 +86,7 @@ public class PowerUps : MonoBehaviour
         DisableComponentsAndPlayEffect();
 
         player.RateOfFire -= rateSpeed;
-
+        
         yield return new WaitForSeconds(3);
         player.RateOfFire += rateSpeed;
 

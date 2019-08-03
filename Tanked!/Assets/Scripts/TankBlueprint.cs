@@ -15,12 +15,17 @@ public class TankBlueprint : MonoBehaviour
     public GameObject Tank;
     public ScoreSystem score;
 
+    //BricksWallsBase star;
+
+    //[SerializeField] GameObject starBase;
     //[SerializeField] Animation explodingEffect;
 
     // Use this for initialization
     private void Start()
     {
         GameObject obj = GameObject.Find("ScoreSystem");
+        
+         //star = starBase.GetComponent<BricksWallsBase>();
         score = obj.GetComponent<ScoreSystem>();
         HealthBar();
     }
@@ -67,17 +72,17 @@ public class TankBlueprint : MonoBehaviour
         }
     }
 
-    private void Die()
+     void Die()
     {
         //Tank.GetComponent<SpriteRenderer>().enabled = false;
         //Tank.GetComponent<Collider2D>().enabled = false;
         Tank.SetActive(false);
-        if (Tank.CompareTag("Player1")==false)
+        if (Tank.CompareTag("Player1")==false )
         {
         score.AddPtsP1();
 
         }
-        else if (Tank.CompareTag("Player2")==false)
+        else if (Tank.CompareTag("Player2")==false )
         {
         score.AddPtsP2();
         }
@@ -86,6 +91,25 @@ public class TankBlueprint : MonoBehaviour
         //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
         NextScene();
     }
+    //public void DieStar()
+    //{
+    //    //Tank.GetComponent<SpriteRenderer>().enabled = false;
+    //    //Tank.GetComponent<Collider2D>().enabled = false;
+        
+    //    if ( starBase.name == "star2")
+    //    {
+    //        score.AddPtsP1();
+
+    //    }
+    //    else 
+    //    {
+    //        score.AddPtsP2();
+    //    }
+        
+    //    //explodingEffect.GetComponent<Animation>();
+    //    //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
+    //    NextScene();
+    //}
 
     public void NextScene()
     {
@@ -95,7 +119,7 @@ public class TankBlueprint : MonoBehaviour
 
         SceneManager.LoadScene("Rounds");
         }
-        else if(ScoreSystem.rCount==3)
+         if(ScoreSystem.rCount==3)
         {
             SceneManager.LoadScene("GameOver");
             

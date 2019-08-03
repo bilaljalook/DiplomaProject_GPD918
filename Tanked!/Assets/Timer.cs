@@ -9,42 +9,56 @@ public class Timer : MonoBehaviour
 
         //Referencing Timer for PowerUp
     [SerializeField] Slider pTimer;
+    [SerializeField] GameObject PowerUp;
+    PowerUps power;
+    public float startTimer = 0;
     //[SerializeField] Slider pTimer;
-
-    float startingTime = 3f;
-
+     bool fillStart = false;
 
     void Start()
     {
-        pTimer = GetComponent<Slider>();
+        pTimer=GetComponent<Slider>();
+       // power=power.GetComponent<PowerUps>();
+        //PowerUp = power.GetComponent<GameObject>();
+        
+       // theSlide=GetComponent<GameObject>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        //startingTime -= Time.deltaTime;
-        //pTimer.value -= Time.deltaTime; //startingTime;
+        if (fillStart==true)
+        {
+
+            fillTime();
+            Debug.Log(PowerUp);
+      
+        }
 
     }       
 
-    public void PowerUpTimerFire()
+    public void FillTimer()
     {
-        //slideFire.SetActive(true);
-        //pTimerFire.value = 3;//Mathf.MoveTowards(pTimerFire.value, 3.0f, 0f);
-        //if (pTimer.value == 0)
-        //{
-        //    slideFire.SetActive(false);
-        //}
-
+        fillStart=true;
     }
-    public void PowerUpTimerSpeed()
+    void stoptimer()
     {
-        //slideFire.SetActive(true);
-        //pTimerSpeed.value = Mathf.MoveTowards(pTimerFire.value, 3.0f, 0f);
-        //if (pTimer.value == 0)
-        //{
-        //    slideFire.SetActive(false);
-        //}
-
+        fillStart = false;
+       
     }
+    void fillTime()
+    {
+        // startTimer += Time.smoothDeltaTime;
+        // pTimer.value = startTimer;
+        Debug.Log("timeradding");
+        pTimer.value += Time.deltaTime;
+        if (pTimer.value == 3.0f)
+        {
+            //startTimer = 0;
+            pTimer.value = 0;
+            stoptimer();
+
+        }
+    }
+
 }

@@ -17,6 +17,6 @@ public class Shield : MonoBehaviour
     {
         BlockShield.SetActiveRecursively(true);
 
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
     }
 }

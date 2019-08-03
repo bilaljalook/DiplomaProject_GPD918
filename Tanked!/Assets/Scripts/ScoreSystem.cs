@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //TODO Change the scoring system and add a game manager to save the score on it.
 //TODO+ connecting this script with player controller to know which player is having the point
@@ -52,7 +53,7 @@ public class ScoreSystem : MonoBehaviour
     public void AddPtsP1()
     {
         score1 = score1 + 1;
-        //Debug.Log("added 1");
+        Debug.Log("added 1");
 
         TextP1.text = P1s + score1.ToString();
     }
@@ -60,7 +61,7 @@ public class ScoreSystem : MonoBehaviour
     public void AddPtsP2()
     {
         score2 += 1;
-        //Debug.Log("added 2");
+        Debug.Log("added 2");
 
         TextP2.text = P2s + score2.ToString();
     }
@@ -86,6 +87,11 @@ public class ScoreSystem : MonoBehaviour
     public static void RoundCount()
     {
         rCount++;
+        if (rCount == 3)
+        {
+            SceneManager.LoadScene("GameOver");
+
+        }
 
     }
 }
