@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class BricksWallsBase : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class BricksWallsBase : MonoBehaviour
     [SerializeField] private GameObject Star;
 
     ScoreSystem score;
-    //[SerializeField] Animation explodingEffect;
+    [SerializeField] Animation explodingEffect;
     // Use this for initialization
     private void Start()
     {
@@ -23,7 +24,9 @@ public class BricksWallsBase : MonoBehaviour
 
     private void BlockDestroyed()
     {
+
         Destroy(gameObject);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,9 +34,12 @@ public class BricksWallsBase : MonoBehaviour
         projectile projectile = collision.GetComponent<projectile>();
 
         //Debug.Log("Star Col//: " + collision.gameObject.tag);
-        BlockDestroyed();
-        //explodingEffect.GetComponent<Animation>();
-        //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
+        
+        PlayerController.stopInput = true;
+        FindObjectOfType<AudioControl>().Play("explode");
+        explodingEffect.GetComponent<Animation>();
+        explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
+        StartCoroutine(wait(.8f));
         if (gameObject.name == "star1")
         {
             score.AddPtsP2();
@@ -43,7 +49,14 @@ public class BricksWallsBase : MonoBehaviour
         {
             score.AddPtsP1();
         }
+        
+    }
+    IEnumerator wait(float t)
+    {
+        yield return new WaitForSeconds(t);
+        BlockDestroyed();
         FindObjectOfType<TankBlueprint>().NextScene();
+        
         
     }
 }

@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject SpawnPoint;
 
-    
+    public static bool stopInput=false;
     
 
     
@@ -39,10 +39,13 @@ public class PlayerController : MonoBehaviour
     {
         
 
+
+        if (stopInput==false)
+        {
         GetInput();
 
-        
         Moving();
+        }
     }
 
     private void GetInput()
@@ -82,24 +85,11 @@ public class PlayerController : MonoBehaviour
 
     public void Moving()
     {
+
         rigid.velocity = moveDirection * Speed * Time.smoothDeltaTime;
     }
 
-    public void IsDead()
-    {
-        //if (gameObject.GetComponent<SpriteRenderer>().enabled == false && gameObject.CompareTag("Player1")==null)
-        //{
-        //    score.AddPtsP2();
-        //    update = true;
-        //    Debug.Log("playedr2 up");
-        //}
-        //else if (gameObject.GetComponent<SpriteRenderer>().enabled==false&&PlayerId=="Player2")
-        //{
-        //    score.AddPtsP1();
-        //    update = true;
-        //    Debug.Log("Player1 up");
-        //}
-    }
+    
 
     public void Shield_On()
     {

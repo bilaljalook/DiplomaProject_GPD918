@@ -8,22 +8,18 @@ public class PowerUps : MonoBehaviour
     public ParticleSystem effect;
     [SerializeField] Animation animEffect;
 
-    float speedUp = 3500;
-    float rateSpeed = 1;
+    float speedUp = 2100;
+    float rateSpeed = 0.8f;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
-    //[SerializeField] GameObject timer;
-    //Timer refTimer;
+    
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
-        //refTimer.GetComponent<Timer>();
-        //timer.GetComponent<GameObject>();
-        //refTimer=timer.GetComponent<Timer>();
-        //GetComponent<Slider>();
+        
     }
 
     private void Update()

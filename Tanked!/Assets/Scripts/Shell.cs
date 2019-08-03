@@ -11,6 +11,7 @@ public class Shell : MonoBehaviour
 
     public void Shoot()
     {
+        FindObjectOfType<AudioControl>().Play("Shoot");
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
     }
 }

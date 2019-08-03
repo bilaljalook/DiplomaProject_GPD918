@@ -18,6 +18,7 @@ public class BoxDes : MonoBehaviour
 
         if (collision.name == ("Projectile 1(Clone)"))
         {
+            FindObjectOfType<AudioControl>().Play("bHit");
             Destroy(gameObject);
         }
         //Debug.Log("Brick//: " + collision.name);

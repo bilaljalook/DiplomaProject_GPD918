@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class TankBlueprint : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class TankBlueprint : MonoBehaviour
     //BricksWallsBase star;
 
     //[SerializeField] GameObject starBase;
-    //[SerializeField] Animation explodingEffect;
+    [SerializeField] Animation explodingEffect;
 
     // Use this for initialization
     private void Start()
@@ -39,9 +40,16 @@ public class TankBlueprint : MonoBehaviour
     public void TakeDamage(int dmg = 1)
     {
         health = health - dmg;
+        FindObjectOfType<AudioControl>().Play("tHit");
         if (health == 0)
         {
-            Die();
+            PlayerController.stopInput = true;
+            FindObjectOfType<AudioControl>().Play("explode");
+
+        explodingEffect.GetComponent<Animation>();
+        explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
+            StartCoroutine(wait(1f));
+           
         }
     }
 
@@ -86,45 +94,31 @@ public class TankBlueprint : MonoBehaviour
         {
         score.AddPtsP2();
         }
-        Destroy(gameObject);
-        //explodingEffect.GetComponent<Animation>();
-        //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
-        NextScene();
-    }
-    //public void DieStar()
-    //{
-    //    //Tank.GetComponent<SpriteRenderer>().enabled = false;
-    //    //Tank.GetComponent<Collider2D>().enabled = false;
-        
-    //    if ( starBase.name == "star2")
-    //    {
-    //        score.AddPtsP1();
 
-    //    }
-    //    else 
-    //    {
-    //        score.AddPtsP2();
-    //    }
+
+
+
+        NextScene();
         
-    //    //explodingEffect.GetComponent<Animation>();
-    //    //explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
-    //    NextScene();
-    //}
+    }
+    
 
     public void NextScene()
     {
-       
+        PlayerController.stopInput = false;  
         if (ScoreSystem.rCount<2)
         {
 
         SceneManager.LoadScene("Rounds");
         }
-         if(ScoreSystem.rCount==3)
-        {
-            SceneManager.LoadScene("GameOver");
-            
-        }
+        
             ScoreSystem.RoundCount();
         Debug.Log(ScoreSystem.rCount.ToString());
+    }
+    IEnumerator wait(float t)
+    {
+        yield return new WaitForSeconds(t);
+         Die();
+        Destroy(gameObject);
     }
 }

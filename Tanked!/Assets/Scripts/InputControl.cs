@@ -14,7 +14,7 @@ public class InputControl : MonoBehaviour
 
     public static bool GamePause = false;
 
-    static int RoundCount = 0;
+    
 
     // Use this for initialization
     private void Start()
@@ -24,6 +24,11 @@ public class InputControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (SceneManager.GetSceneByName("MainMenu").isLoaded)
+        {
+            ScoreSystem.score1 = 0;
+            ScoreSystem.score2 = 0;
+        }
         if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)
         {
             eventSystem.SetSelectedGameObject(selectedGameObject);
