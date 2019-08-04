@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9e490788aed21c247b1c2516d02806f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5603112448181597096
+    second: CountDown_0
+  - first:
+      213: -1564559017928238211
+    second: CountDown_1
+  - first:
+      213: 9124283793010212180
+    second: CountDown_2
+  - first:
+      213: 4541357102596652663
+    second: CountDown_3
+  - first:
+      213: 628589017377659797
+    second: CountDown_4
+  - first:
+      213: 3305971840800841237
+    second: CountDown_5
+  - first:
+      213: -1722254031797500620
+    second: CountDown_6
+  - first:
+      213: -6461947529218169618
+    second: CountDown_7
+  - first:
+      213: 6640086284325006426
+    second: CountDown_8
+  - first:
+      213: -6039039060240969122
+    second: CountDown_9
+  - first:
+      213: -959677668484261014
+    second: CountDown_10
+  - first:
+      213: 1573604761563197310
+    second: CountDown_11
+  - first:
+      213: -6476423732559620177
+    second: CountDown_12
+  - first:
+      213: 8876607458731806866
+    second: CountDown_13
+  - first:
+      213: -624927696733907804
+    second: CountDown_14
+  - first:
+      213: 114312254433648030
+    second: CountDown_15
+  - first:
+      213: -9041017236964891737
+    second: CountDown_16
+  - first:
+      213: 4415241047652594442
+    second: CountDown_17
+  - first:
+      213: 33225350679508998
+    second: CountDown_18
+  - first:
+      213: -8436700156056453222
+    second: CountDown_19
+  - first:
+      213: -2976755599387734857
+    second: CountDown_20
+  - first:
+      213: 719960995831605375
+    second: CountDown_21
+  - first:
+      213: 3953381651865380063
+    second: CountDown_22
+  - first:
+      213: -1632413220701181624
+    second: CountDown_23
+  - first:
+      213: 5004664532702612133
+    second: CountDown_24
+  - first:
+      213: -1935886230078088009
+    second: CountDown_25
+  - first:
+      213: -1716872050611721877
+    second: CountDown_26
+  - first:
+      213: -5089804901383491747
+    second: CountDown_27
+  - first:
+      213: 1837605988028413477
+    second: CountDown_29
+  - first:
+      213: 6376769246752187039
+    second: CountDown_30
+  - first:
+      213: 4854661375061356783
+    second: CountDown_31
+  - first:
+      213: -8082120346813262505
+    second: CountDown_32
+  - first:
+      213: -3153607493179614027
+    second: CountDown_33
+  - first:
+      213: 833470488914812095
+    second: CountDown_34
+  - first:
+      213: -8634138508541655193
+    second: CountDown_35
+  - first:
+      213: 5965291639030427366
+    second: CountDown_36
+  - first:
+      213: 1855098382973267706
+    second: CountDown_37
+  - first:
+      213: -699946871994271082
+    second: CountDown_38
+  - first:
+      213: -3788476824716028337
+    second: CountDown_39
+  - first:
+      213: 2299551732353034917
+    second: CountDown_40
+  - first:
+      213: 6148683011697999232
+    second: CountDown_41
+  - first:
+      213: -678033732708915196
+    second: CountDown_42
+  - first:
+      213: -109080910425200132
+    second: CountDown_43
+  - first:
+      213: -1688060218049189064
+    second: CountDown_44
+  - first:
+      213: -144732007256799225
+    second: CountDown_45
+  - first:
+      213: 7641775256819014513
+    second: CountDown_46
+  - first:
+      213: -6957943415509662915
+    second: CountDown_47
+  - first:
+      213: -2546466687647601085
+    second: CountDown_48
+  - first:
+      213: -2511504834454335449
+    second: CountDown_49
+  - first:
+      213: -2207457827165057242
+    second: CountDown_50
+  - first:
+      213: 5855018829484824000
+    second: CountDown_51
+  - first:
+      213: -6200428491711750752
+    second: CountDown_52
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CountDown_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 45
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9927f301437802545aa3228cbf19ad87
+      internalID: -5603112448181597096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CountDown_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 16
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f685a010ff3d28e48b211c1933836775
+      internalID: -1564559017928238211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CountDown_3
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 11
+        width: 113
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 5, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cabbd6093cf4247b036e6455bf910b
+      internalID: 4541357102596652663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CountDown_29
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22acf94f8ac7d8448c5777de6ae7c54
+      internalID: 1837605988028413477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CountDown_52
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 16
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f5488360993474ab4fb9d70edb1f6e
+      internalID: -6200428491711750752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -569.5, y: -18.5}
+      - {x: -569.5, y: 34.5}
+      - {x: -524.5, y: 34.5}
+      - {x: -524.5, y: -18.5}
+    - - {x: -517.5, y: -18.5}
+      - {x: -517.5, y: 34.5}
+      - {x: -464.5, y: 34.5}
+      - {x: -464.5, y: -18.5}
+    - - {x: -457.5, y: -18.5}
+      - {x: -457.5, y: 34.5}
+      - {x: -404.5, y: 34.5}
+      - {x: -404.5, y: -18.5}
+    - - {x: -277.5, y: -20.5}
+      - {x: -277.5, y: 34.5}
+      - {x: -164.5, y: 34.5}
+      - {x: -164.5, y: -20.5}
+    physicsShape: []
+    bones: []
+    spriteID: d8021d487bd9d77488c99ff7cd0524a2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

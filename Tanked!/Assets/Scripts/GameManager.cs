@@ -5,8 +5,9 @@
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public static int scoreM1;
-    public static int scoreM2;
+
+
+    public static bool Countdown = false;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        
     }
 
     private void KeepScore()

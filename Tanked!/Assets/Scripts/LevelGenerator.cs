@@ -21,6 +21,7 @@ public class LevelGenerator : MonoBehaviour
     {
         transform.position = startPosition.position;
         Instantiate(Squares[Random.Range(0, 4)], transform.position, Quaternion.identity);
+        PlayerController.stopInput = true;
          //Time.timeScale = 0f;
     }
 
@@ -86,6 +87,7 @@ public class LevelGenerator : MonoBehaviour
             }
             else
             {
+                //PlayerController.stopInput = false;
                 StopGen = true; //Stop Generating
             }
         }
