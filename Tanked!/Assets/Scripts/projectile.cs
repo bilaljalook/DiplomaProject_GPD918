@@ -5,7 +5,7 @@ public class projectile : MonoBehaviour
     //TODO complete the animation proccess for the explosion effect
     //TODO rewire the whole code to make the script connected to only PlayerController script
 
-    [SerializeField] float speed = 30f;
+    [SerializeField] private float speed = 30f;
     public Rigidbody2D rigid;
 
     //public GameObject explosionEffect;
@@ -22,7 +22,6 @@ public class projectile : MonoBehaviour
 
         if (Tank != null)
         {
-            
             Tank.TakeDamage(1);
         }
 

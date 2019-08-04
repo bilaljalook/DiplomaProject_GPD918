@@ -61,7 +61,16 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 208b975fe77aff24a9ecb4b5b6b35b96, type: 3}
     volume: 1
     sources: {fileID: 0}
-  - name: 
-    clip: {fileID: 8300000, guid: 48df1973e30bac44aac36ba64a15c4b9, type: 3}
-    volume: 0.465
+  - name: powerUp
+    clip: {fileID: 8300000, guid: cc6270d207b27114494f80e871dbcbca, type: 3}
+    volume: 1
     sources: {fileID: 0}
+  - name: shield
+    clip: {fileID: 8300000, guid: af4605905a7200e49a2ae977c48befbc, type: 3}
+    volume: 1
+    sources: {fileID: 0}
+  - name: move
+    clip: {fileID: 8300000, guid: 7018d4816c395284fb4e13baf12cf303, type: 3}
+    volume: 0.582
+    sources: {fileID: 0}
+  Vol: {fileID: 0}

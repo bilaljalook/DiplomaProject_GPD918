@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 
-//TODO fix the movement bug when pressing to direction at the same time.
-//TODO Finish the input of the player in unity editor
-//TODO The score system need get a reference to the playerId and put it in the gamemanager
 public class PlayerController : MonoBehaviour
 {
     public string PlayerId;
@@ -18,33 +15,29 @@ public class PlayerController : MonoBehaviour
     private float nextF = 0.0f;
 
     public ScoreSystem score;
-    
 
     public GameObject SpawnPoint;
 
-    public static bool stopInput=false;
-    
+    public static bool stopInput = false;
 
-    
+    [SerializeField] Timer Stime;
+    [SerializeField] Timer Rtime;
 
     private void Start()
     {
+        Stime.GetComponent<GameObject>();
+        Rtime.GetComponent<GameObject>();
         rigid = GetComponent<Rigidbody2D>();
         PlayerId = PlayerId + " ";
-        
-        
     }
 
     private void Update()
     {
-        
-
-
-        if (stopInput==false)
+        if (stopInput == false)
         {
-        GetInput();
+            GetInput();
 
-        Moving();
+            Moving();
         }
     }
 
@@ -58,26 +51,32 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection += Vector2.up;
             rotationAngle = 90;
+             FindObjectOfType<AudioControl>().Play("move");
         }
         else if (Input.GetButton(PlayerId + "Down"))
         {
             moveDirection += Vector2.down;
             rotationAngle = -90;
+             FindObjectOfType<AudioControl>().Play("move");
         }
         else if (Input.GetButton(PlayerId + "Left"))
         {
             moveDirection += Vector2.left;
             rotationAngle = 180;
+             FindObjectOfType<AudioControl>().Play("move");
         }
         else if (Input.GetButton(PlayerId + "Right"))
         {
             moveDirection += Vector2.right;
             rotationAngle = 0;
+             FindObjectOfType<AudioControl>().Play("move");
         }
+
         transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
         if (Input.GetButton(PlayerId + "Fire") && Time.time > nextF)
         {
+           
             nextF = Time.time + RateOfFire;
             GetComponent<Shell>().Shoot();
         }
@@ -85,11 +84,9 @@ public class PlayerController : MonoBehaviour
 
     public void Moving()
     {
-
         rigid.velocity = moveDirection * Speed * Time.smoothDeltaTime;
+        
     }
-
-    
 
     public void Shield_On()
     {
@@ -98,5 +95,13 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log("Worked");
     }
-    
+
+    public void SpeedTimer()
+    {
+        Stime.FillTimer();
+    }
+    public void RateTimer()
+    {
+        Rtime.FillTimer();
+    }
 }

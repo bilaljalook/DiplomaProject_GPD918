@@ -10,7 +10,7 @@ public class SquareSpawn : MonoBehaviour
         SpawnTheRest();
     }
 
-    void  SpawnTheRest()
+    private void SpawnTheRest()
     {
         int Randomize = Random.Range(0, objects.Length);
         GameObject instance = (GameObject)Instantiate(objects[Randomize], transform.position, Quaternion.identity);

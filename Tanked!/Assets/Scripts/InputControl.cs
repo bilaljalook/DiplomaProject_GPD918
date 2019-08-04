@@ -14,8 +14,6 @@ public class InputControl : MonoBehaviour
 
     public static bool GamePause = false;
 
-    
-
     // Use this for initialization
     private void Start()
     {
@@ -42,15 +40,21 @@ public class InputControl : MonoBehaviour
             }
             else
             {
+                if (PlayerController.stopInput==false)
+                {
+
                 Pause();
+                eventSystem.SetSelectedGameObject(null);
+                eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
+                }
             }
         }
-
     }
 
     private void Pause()
     {
         selectedGameObject.SetActive(true);
+        
         Time.timeScale = 0f;
         GamePause = true;
     }
@@ -86,7 +90,7 @@ public class InputControl : MonoBehaviour
 
     public void FullScreen(bool isFull)
     {
-        //Screen.fullScreen = isFull;
+        
         if (isFull)
         {
             Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;

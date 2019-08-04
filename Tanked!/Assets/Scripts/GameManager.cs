@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-
     public static bool Countdown = false;
 
     private void Awake()
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
     }
 
     private void KeepScore()

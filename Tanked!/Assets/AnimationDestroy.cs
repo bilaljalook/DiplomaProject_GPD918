@@ -1,27 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class AnimationDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] Animator Anim;
-    [SerializeField] float finishTimeAnim;
-    void Start()
+    [SerializeField] private Animator Anim;
+    [SerializeField] private float finishTimeAnim;
+
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Anim.isActiveAndEnabled)
+        if (Anim.isActiveAndEnabled)
         {
             Destroy(gameObject, finishTimeAnim);
         }
     }
-
-    
 }

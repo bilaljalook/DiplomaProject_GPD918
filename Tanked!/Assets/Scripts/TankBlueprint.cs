@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
 public class TankBlueprint : MonoBehaviour
 {
@@ -19,14 +19,14 @@ public class TankBlueprint : MonoBehaviour
     //BricksWallsBase star;
 
     //[SerializeField] GameObject starBase;
-    [SerializeField] Animation explodingEffect;
+    [SerializeField] private Animation explodingEffect;
 
     // Use this for initialization
     private void Start()
     {
         GameObject obj = GameObject.Find("ScoreSystem");
-        
-         //star = starBase.GetComponent<BricksWallsBase>();
+
+        //star = starBase.GetComponent<BricksWallsBase>();
         score = obj.GetComponent<ScoreSystem>();
         HealthBar();
     }
@@ -46,10 +46,9 @@ public class TankBlueprint : MonoBehaviour
             PlayerController.stopInput = true;
             FindObjectOfType<AudioControl>().Play("explode");
 
-        explodingEffect.GetComponent<Animation>();
-        explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
+            explodingEffect.GetComponent<Animation>();
+            explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
             StartCoroutine(wait(1f));
-           
         }
     }
 
@@ -80,45 +79,39 @@ public class TankBlueprint : MonoBehaviour
         }
     }
 
-     void Die()
+    private void Die()
     {
         //Tank.GetComponent<SpriteRenderer>().enabled = false;
         //Tank.GetComponent<Collider2D>().enabled = false;
         Tank.SetActive(false);
-        if (Tank.CompareTag("Player1")==false )
+        if (Tank.CompareTag("Player1") == false)
         {
-        score.AddPtsP1();
-
+            score.AddPtsP1();
         }
-        else if (Tank.CompareTag("Player2")==false )
+        else if (Tank.CompareTag("Player2") == false)
         {
-        score.AddPtsP2();
+            score.AddPtsP2();
         }
-
-
-
 
         NextScene();
-        
     }
-    
 
     public void NextScene()
     {
-        PlayerController.stopInput = false;  
-        if (ScoreSystem.rCount<2)
+        PlayerController.stopInput = false;
+        if (ScoreSystem.rCount < 2)
         {
-
-        SceneManager.LoadScene("Rounds");
+            SceneManager.LoadScene("Rounds");
         }
-        
-            ScoreSystem.RoundCount();
+
+        ScoreSystem.RoundCount();
         Debug.Log(ScoreSystem.rCount.ToString());
     }
-    IEnumerator wait(float t)
+
+    private IEnumerator wait(float t)
     {
         yield return new WaitForSeconds(t);
-         Die();
+        Die();
         Destroy(gameObject);
     }
 }

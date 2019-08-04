@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
 [System.Serializable]
-public class Sounds 
+public class Sounds
 {
     [SerializeField] public string name;
 
     [SerializeField] public AudioClip clip;
 
-
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     [SerializeField] public float volume;
 
     [HideInInspector]
