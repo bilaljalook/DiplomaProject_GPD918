@@ -71,7 +71,8 @@ SpriteRenderer:
   m_SortingLayerID: -967478615
   m_SortingLayer: 8
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300022, guid: c2b1fdfa36f19b145959088738b92dfb, type: 3}
+  m_Sprite: {fileID: -6227739751521576426, guid: bdd654f0cd2bf1440a497638de80b65e,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +92,7 @@ Animation:
   m_GameObject: {fileID: 1426248378694038}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: dc8ae5c6b259f4b4fbadafe593e727f8, type: 2}
+  m_Animation: {fileID: 7400000, guid: 395546b7e028d994186b43b466b962fe, type: 2}
   m_Animations: []
   m_WrapMode: 0
   m_PlayAutomatically: 0

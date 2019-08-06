@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class BricksWallsBase : MonoBehaviour
 {
-    //get the star to bes destroyed corectly and go to the next scene, connect it with the score system
+    
     [SerializeField] private GameObject Star;
 
     private ScoreSystem score;
     [SerializeField] private Animation explodingEffect;
 
-    // Use this for initialization
+    
     private void Start()
     {
-        //scene = FindObjectOfType<InputControl>();
+        
         Star = GameObject.Find("ScoreSystem");
         score = Star.GetComponent<ScoreSystem>();
     }
 
-    // Update is called once per frame
+    
     private void Update()
     {
     }

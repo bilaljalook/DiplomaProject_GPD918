@@ -179,7 +179,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objects:
-  - {fileID: 204504629201332625, guid: 1276b0426b8e4ee4f94dc173517cff43, type: 3}
   - {fileID: 7113725675295120146, guid: d58ada47cdeec7840aafa1dbdb924f42, type: 3}
 --- !u!1 &5371326570114670912
 GameObject:

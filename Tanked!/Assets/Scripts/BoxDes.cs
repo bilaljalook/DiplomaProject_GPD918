@@ -2,7 +2,7 @@
 
 public class BoxDes : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Animation explodingEffect;
     private void Start()
     {
     }
@@ -20,6 +20,8 @@ public class BoxDes : MonoBehaviour
         {
             FindObjectOfType<AudioControl>().Play("bHit");
             Destroy(gameObject);
+            explodingEffect.GetComponent<Animation>();
+            explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
         }
         //Debug.Log("Brick//: " + collision.name);
     }

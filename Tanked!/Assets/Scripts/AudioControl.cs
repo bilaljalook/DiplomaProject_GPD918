@@ -35,6 +35,7 @@ public class AudioControl : MonoBehaviour
             s.sources.clip = s.clip;
 
             s.sources.volume = s.volume;
+           
         }
     }
 

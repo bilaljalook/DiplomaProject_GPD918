@@ -9,6 +9,7 @@ public class Sounds
 
     [Range(0f, 1f)]
     [SerializeField] public float volume;
+   
 
     [HideInInspector]
     public AudioSource sources;
