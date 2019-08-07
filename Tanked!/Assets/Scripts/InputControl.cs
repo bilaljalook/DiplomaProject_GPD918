@@ -3,9 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class InputControl : MonoBehaviour
-{   //TODO******//store in game manager {this UI script}
-    //TODO transfer all ButtonControl related object in the engine to Input control
-    //TODO a dynamic variable index for next scenes to loaded automatically
+{  
     public EventSystem eventSystem;
 
     public GameObject selectedGameObject;

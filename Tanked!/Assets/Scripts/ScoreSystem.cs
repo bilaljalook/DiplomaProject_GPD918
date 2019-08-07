@@ -41,14 +41,7 @@ public class ScoreSystem : MonoBehaviour
         TextP2.text = P2s + score2.ToString();
         Scoreboared();
         Rounds.text = round + rCount.ToString() + "/3";
-        /* if (P1.GetComponent<SpriteRenderer>().enabled==false)
-         {
-             AddPtsP2();
-         }
-         else if (P2.GetComponent<SpriteRenderer>().enabled==false)
-         {
-             AddPtsP1();
-         }*/
+        
     }
 
     public void AddPtsP1()

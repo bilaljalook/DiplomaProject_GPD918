@@ -4,7 +4,7 @@ public class Obstacles_Design : MonoBehaviour
 {
     //TODO hier where all the walls and obstacles goes, plus try to generate the map aswell
 
-    //[SerializeField] GameObject Bricks;
+   
 
     // Use this for initialization
     private void Start()

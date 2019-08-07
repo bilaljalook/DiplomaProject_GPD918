@@ -18,7 +18,7 @@ public class TankBlueprint : MonoBehaviour
 
     //BricksWallsBase star;
 
-    //[SerializeField] GameObject starBase;
+    
     [SerializeField] private Animation explodingEffect;
 
     // Use this for initialization
@@ -26,7 +26,7 @@ public class TankBlueprint : MonoBehaviour
     {
         GameObject obj = GameObject.Find("ScoreSystem");
 
-        //star = starBase.GetComponent<BricksWallsBase>();
+        
         score = obj.GetComponent<ScoreSystem>();
         HealthBar();
     }
@@ -40,11 +40,11 @@ public class TankBlueprint : MonoBehaviour
     public void TakeDamage(int dmg = 1)
     {
         health = health - dmg;
-        FindObjectOfType<AudioControl>().Play("tHit");
+        AudioControl.instance.Play("tHit");
         if (health == 0)
         {
             PlayerController.stopInput = true;
-            FindObjectOfType<AudioControl>().Play("explode");
+            AudioControl.instance.Play("explode");
 
             explodingEffect.GetComponent<Animation>();
             explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);

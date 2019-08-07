@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float Speed = 0.5f;
     [SerializeField] public float RateOfFire = 1.5f;
     [SerializeField] private GameObject PlayerShield;
+
+   
 
     private Shield playerSH;
     private Rigidbody2D rigid;
@@ -23,6 +26,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Timer Stime;
     [SerializeField] Timer Rtime;
 
+    
+    
+
     private void Start()
     {
         Stime.GetComponent<GameObject>();
@@ -33,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (stopInput == false)
         {
             GetInput();
@@ -47,31 +55,32 @@ public class PlayerController : MonoBehaviour
 
         float rotationAngle = transform.rotation.eulerAngles.z;
 
-        if (Input.GetButton(PlayerId + "Up"))
+        if (Input.GetButton(PlayerId + "Up")||Input.GetAxis(PlayerId + "JoyU")>0)
         {
+            
             moveDirection += Vector2.up;
             rotationAngle = 90;
              FindObjectOfType<AudioControl>().Play("move");
         }
-        else if (Input.GetButton(PlayerId + "Down"))
+        else if (Input.GetButton(PlayerId + "Down") || Input.GetAxis(PlayerId + "JoyD") < 0)
         {
             moveDirection += Vector2.down;
             rotationAngle = -90;
              FindObjectOfType<AudioControl>().Play("move");
         }
-        else if (Input.GetButton(PlayerId + "Left"))
+        else if (Input.GetButton(PlayerId + "Left")||Input.GetAxis(PlayerId + "JoyL")<0)
         {
             moveDirection += Vector2.left;
             rotationAngle = 180;
              FindObjectOfType<AudioControl>().Play("move");
         }
-        else if (Input.GetButton(PlayerId + "Right"))
+        else if (Input.GetButton(PlayerId + "Right") || Input.GetAxis(PlayerId + "JoyR") > 0)
         {
             moveDirection += Vector2.right;
             rotationAngle = 0;
-             FindObjectOfType<AudioControl>().Play("move");
+             AudioControl.instance.Play("move");
         }
-
+        
         transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
 
         if (Input.GetButton(PlayerId + "Fire") && Time.time > nextF)
@@ -84,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     public void Moving()
     {
-        rigid.velocity = moveDirection * Speed * Time.smoothDeltaTime;
+        rigid.velocity = moveDirection * Speed * Time.smoothDeltaTime;//smooth it
         
     }
 

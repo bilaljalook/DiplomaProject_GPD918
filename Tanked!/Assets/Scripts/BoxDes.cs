@@ -18,7 +18,7 @@ public class BoxDes : MonoBehaviour
 
         if (collision.name == ("Projectile 1(Clone)"))
         {
-            FindObjectOfType<AudioControl>().Play("bHit");
+            AudioControl.instance.Play("bHit");
             Destroy(gameObject);
             explodingEffect.GetComponent<Animation>();
             explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);

@@ -9,10 +9,10 @@ public class Timer : MonoBehaviour
 
         //Referencing Timer for PowerUp
     [SerializeField] Slider pTimer;
-    [SerializeField] PlayerController player;
+    [SerializeField] GameObject player;
     
     float startTimer = 0;
-    //[SerializeField] Slider pTimer;
+    
      bool fillStart = false;
 
     void Start()

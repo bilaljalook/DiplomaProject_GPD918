@@ -11,8 +11,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float startTimeToSquare = 0.2f;
     private float TimeToSquare;
 
-    //[SerializeField] float minX;
-    //[SerializeField] float maxX;
+    
     [SerializeField] private float maxY;
 
     public bool StopGen;
@@ -22,7 +21,7 @@ public class LevelGenerator : MonoBehaviour
         transform.position = startPosition.position;
         Instantiate(Squares[Random.Range(0, 4)], transform.position, Quaternion.identity);
         PlayerController.stopInput = true;
-        //Time.timeScale = 0f;
+        
     }
 
     private void Update()
@@ -87,7 +86,7 @@ public class LevelGenerator : MonoBehaviour
             }
             else
             {
-                //PlayerController.stopInput = false;
+                
                 StopGen = true; //Stop Generating
             }
         }

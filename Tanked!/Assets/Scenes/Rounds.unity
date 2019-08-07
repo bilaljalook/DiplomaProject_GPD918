@@ -212,6 +212,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092563621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3891052589764023665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1542713543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,7 +382,7 @@ MonoBehaviour:
   TextP1: {fileID: 1883535357}
   TextP2: {fileID: 2137765875}
   winner: {fileID: 2065971351}
-  Rounds: {fileID: 5462492738318894712, guid: 1ee3c4d93ca7ae446bea94495afb0621, type: 3}
+  Rounds: {fileID: 1092563621}
   P1: {fileID: 1883535355}
   P2: {fileID: 2137765873}
 --- !u!1 &1883535355 stripped
@@ -756,6 +768,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Padding.m_Bottom
       value: -97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3891052589125433573, guid: 111e3f7780f560549a2fea8cfdc8805e,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 111e3f7780f560549a2fea8cfdc8805e, type: 3}

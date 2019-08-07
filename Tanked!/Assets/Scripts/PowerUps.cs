@@ -14,6 +14,7 @@ public class PowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
+    
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -56,9 +57,9 @@ public class PowerUps : MonoBehaviour
 
     private IEnumerator PickPowerSpeed(PlayerController player)
     {
-        FindObjectOfType<AudioControl>().Play("powerUp");
+        AudioControl.instance.Play("powerUp");
         DisableComponentsAndPlayEffect();
-        FindObjectOfType<PlayerController>().SpeedTimer();
+        player.SpeedTimer();
         player.Speed += speedUp;
 
         yield return new WaitForSeconds(3);
@@ -69,9 +70,9 @@ public class PowerUps : MonoBehaviour
 
     private IEnumerator PickPowerRate(PlayerController player)
     {
-        FindObjectOfType<AudioControl>().Play("powerUp");
+        AudioControl.instance.Play("powerUp");
         DisableComponentsAndPlayEffect();
-        FindObjectOfType<PlayerController>().RateTimer();
+        player.RateTimer();
         player.RateOfFire -= rateSpeed;
 
         yield return new WaitForSeconds(3);
@@ -82,7 +83,7 @@ public class PowerUps : MonoBehaviour
 
     private IEnumerator PickPowerShield(PlayerController player)
     {
-         FindObjectOfType<AudioControl>().Play("shield");
+         AudioControl.instance.Play("shield");
         //Debug.Log(player.name); //to check which player getting the shield
         DisableComponentsAndPlayEffect();
 

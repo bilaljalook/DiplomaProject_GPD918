@@ -10,5 +10,6 @@ public class Coundown : MonoBehaviour
         GmCountD = GameObject.Find("GameManager").GetComponent<GameManager>();
         GameManager.Countdown = true;
         PlayerController.stopInput = false;
+        Destroy(gameObject);
     }
 }

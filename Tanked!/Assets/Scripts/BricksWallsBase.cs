@@ -34,7 +34,7 @@ public class BricksWallsBase : MonoBehaviour
         //Debug.Log("Star Col//: " + collision.gameObject.tag);
 
         PlayerController.stopInput = true;
-        FindObjectOfType<AudioControl>().Play("explode");
+        AudioControl.instance.Play("explode");
         explodingEffect.GetComponent<Animation>();
         explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
         StartCoroutine(wait(.8f));
