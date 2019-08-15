@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class AudioControl : MonoBehaviour  // This is a Singleton Audio Manager
 {
     //References
-    public AudioMixer Mixer;
-
-    public Sounds[] sounds;
-
     public static AudioControl instance;
 
-    [SerializeField] private Slider Vol;
-
     public static float saveVol;
+
+    public AudioMixer Mixer;
+    public Sounds[] sounds;
+
+    [SerializeField] private Slider Vol;
 
     // Use this for initialization
     private void Awake()
@@ -52,8 +51,6 @@ public class AudioControl : MonoBehaviour  // This is a Singleton Audio Manager
         s.sources.Play();
         if (!s.sources.isPlaying)
             s.sources.PlayOneShot(s.sources.clip);
-
-        
     }
 
     public void sVol() //Saving the value of the volume between Scens

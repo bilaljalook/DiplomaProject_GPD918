@@ -2,15 +2,13 @@
 
 public class SquareSelect : MonoBehaviour //To spawn the Squares after Generation is done
 {
-    //[SerializeField] private LayerMask selectSquare;
     [SerializeField] private LevelGenerator gen;
 
     [SerializeField] private GameObject[] EmptySpace; // to choose what exact randoms to generate in the empty space
 
     private void Update()
     {
-        //Collider2D ifSquareSpawn = Physics2D.OverlapCircle(transform.position, 1, selectSquare);
-        if (/*ifSquareSpawn == null &&*/ gen.StopGen == true) //autocomplete generation
+        if (gen.StopGen == true) //autocomplete generation
         {
             int random = Random.Range(0, EmptySpace.Length);
             Instantiate(EmptySpace[random], transform.position, Quaternion.identity);

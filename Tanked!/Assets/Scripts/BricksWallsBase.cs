@@ -1,20 +1,19 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-
-//TODO Power spawn after time, Shield 1 and then random spawn, animation for brick, bricks destroy sprite, sounds for 2 players
 public class BricksWallsBase : MonoBehaviour //Base Class
 {
     //references
-    [SerializeField] private GameObject Star;
+    [SerializeField] private GameObject star;
+
+    [SerializeField] private Animation explodingEffect;
 
     private ScoreSystem score;
-    [SerializeField] private Animation explodingEffect;
 
     private void Start()
     {
-        Star = GameObject.Find("ScoreSystem");
-        score = Star.GetComponent<ScoreSystem>();
+        star = GameObject.Find("ScoreSystem");
+        score = star.GetComponent<ScoreSystem>();
     }
 
     private void Update()

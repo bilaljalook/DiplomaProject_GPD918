@@ -20,7 +20,7 @@ public class InputControl : MonoBehaviour
             ScoreSystem.score1 = 0;
             ScoreSystem.score2 = 0;
         }
-        if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)//selection navigation
+        if (Input.GetAxisRaw("Vertical") != 0 && Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)//selection navigation
         {
             eventSystem.SetSelectedGameObject(selectedGameObject);
             buttonSelected = true;
@@ -37,8 +37,8 @@ public class InputControl : MonoBehaviour
                 {
                     PlayerController.stopInput = true; //pause any player movement during pause menu control
                     Pause();
-                    eventSystem.SetSelectedGameObject(null); //reseting selection to fix bug for animation button highlgihts
-                    eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
+                    //eventSystem.SetSelectedGameObject(null); //reseting selection to fix bug for animation button highlgihts
+                    //eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
                 }
             }
         }

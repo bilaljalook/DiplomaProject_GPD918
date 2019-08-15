@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 public class ScoreSystem : MonoBehaviour
 {
     //referencs
-    [SerializeField] private TextMeshProUGUI TextP1;
 
+    [SerializeField] private TextMeshProUGUI TextP1;
     [SerializeField] private TextMeshProUGUI TextP2;
     [SerializeField] private TextMeshProUGUI winner;
     [SerializeField] private TextMeshProUGUI Rounds;
@@ -16,12 +16,11 @@ public class ScoreSystem : MonoBehaviour
 
     public static int score1;
     public static int score2;
+    public static int rCount = 0;
 
     private string P1s = "P1 : ";
     private string P2s = "P2 : ";
     private string round = "Round ";
-
-    public static int rCount = 0;
 
     //initialization
     private void Start()

@@ -5,7 +5,7 @@ public class Coundown : MonoBehaviour
     //Setting the class to use in the animation when finished
     private GameManager GmCountD;
 
-    public void SetCountD()
+    public void SetCountDown()
     {
         GmCountD = GameObject.Find("GameManager").GetComponent<GameManager>();
         GameManager.Countdown = true;

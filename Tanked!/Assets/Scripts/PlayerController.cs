@@ -3,24 +3,22 @@
 public class PlayerController : MonoBehaviour
 {
     //References
-    public string PlayerId;
 
+    public string PlayerId;
     public float Speed = 0.5f;
     public float RateOfFire = 1.5f;
-    [SerializeField] private GameObject PlayerShield;
+    private float rotationAngle;
+    private float nextF = 0.0f;
 
     private Shield playerSH;
     private Rigidbody2D rigid;
     private Vector2 moveDirection;
-    private float rotationAngle;
-    private float nextF = 0.0f;
 
     public ScoreSystem score;
-
     public GameObject SpawnPoint;
-
     public static bool stopInput = false;
 
+    [SerializeField] private GameObject PlayerShield;
     [SerializeField] private Timer Stime;
     [SerializeField] private Timer Rtime;
 
@@ -53,30 +51,25 @@ public class PlayerController : MonoBehaviour
         {
             moveDirection += Vector2.up;
             rotationAngle = 90;
-            
         }
         else if (Input.GetButton(PlayerId + "Down") || Input.GetAxis(PlayerId + "JoyD") < 0)
         {
             moveDirection += Vector2.down;
             rotationAngle = -90;
-           
         }
         else if (Input.GetButton(PlayerId + "Left") || Input.GetAxis(PlayerId + "JoyL") < 0)
         {
             moveDirection += Vector2.left;
             rotationAngle = 180;
-            
         }
         else if (Input.GetButton(PlayerId + "Right") || Input.GetAxis(PlayerId + "JoyR") > 0)
         {
             moveDirection += Vector2.right;
             rotationAngle = 0;
-            
         }
-        if (moveDirection!=Vector2.zero)
+        if (moveDirection != Vector2.zero)
         {
-            AudioControl.instance.Play(PlayerId+"move");
-
+            AudioControl.instance.Play(PlayerId + "move");
         }
 
         transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
@@ -84,6 +77,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButton(PlayerId + "Fire") && Time.time > nextF)
         {
             nextF = Time.time + RateOfFire;
+            AudioControl.instance.Play(PlayerId+"Shoot");
             GetComponent<Shell>().Shoot();
         }
     }

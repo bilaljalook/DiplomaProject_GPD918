@@ -7,7 +7,7 @@ public class Shell : MonoBehaviour //the spawn point of the Projectile
 
     public void Shoot()
     {
-        AudioControl.instance.Play("Shoot");
+        
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
     }
 }

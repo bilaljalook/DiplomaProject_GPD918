@@ -45,14 +45,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: af3be46b213418b4fb0f84c50c1f069c, type: 2}
   sounds:
-  - name: Shoot
+  - name: Player1 Shoot
     clip: {fileID: 8300000, guid: 5d079561ddc3ce040aa6ef2e7587d643, type: 3}
     volume: 0.805
     pitch: 1
     sources: {fileID: 0}
   - name: bHit
-    clip: {fileID: 8300000, guid: cd112e069f545dd4ba2395bb7c69b320, type: 3}
-    volume: 0.54
+    clip: {fileID: 8300000, guid: 480bd82e72ecaee42b7c716bf4389b7a, type: 3}
+    volume: 0.433
     pitch: 1
     sources: {fileID: 0}
   - name: tHit
@@ -61,13 +61,13 @@ MonoBehaviour:
     pitch: 1
     sources: {fileID: 0}
   - name: explode
-    clip: {fileID: 8300000, guid: 208b975fe77aff24a9ecb4b5b6b35b96, type: 3}
-    volume: 1
-    pitch: 1
+    clip: {fileID: 8300000, guid: 030a81bd2dfbfee429ceb464b72f1004, type: 3}
+    volume: 0.78
+    pitch: 1.12
     sources: {fileID: 0}
   - name: powerUp
-    clip: {fileID: 8300000, guid: cc6270d207b27114494f80e871dbcbca, type: 3}
-    volume: 1
+    clip: {fileID: 8300000, guid: 2690ed6de38d38e419503cd6bf51f150, type: 3}
+    volume: 0.694
     pitch: 1
     sources: {fileID: 0}
   - name: shield
@@ -77,17 +77,17 @@ MonoBehaviour:
     sources: {fileID: 0}
   - name: Player1 move
     clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
-    volume: 0.554
-    pitch: 1.71
+    volume: 0.3
+    pitch: 2.76
     sources: {fileID: 0}
   - name: Player2 move
     clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
-    volume: 0.491
-    pitch: 2.41
+    volume: 0.12
+    pitch: 3
     sources: {fileID: 0}
-  - name: move
-    clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
-    volume: 0
-    pitch: 0
+  - name: Player2 Shoot
+    clip: {fileID: 8300000, guid: 2690ed6de38d38e419503cd6bf51f150, type: 3}
+    volume: 0.757
+    pitch: 1
     sources: {fileID: 0}
   Vol: {fileID: 0}

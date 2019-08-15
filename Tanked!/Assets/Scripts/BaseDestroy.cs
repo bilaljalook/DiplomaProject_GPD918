@@ -1,17 +1,16 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class BoxDes : MonoBehaviour // Bricks class
+public class BaseDestroy : MonoBehaviour
 {
     //references
     [SerializeField] private Animation explodingEffect;
-    [SerializeField] private Sprite[] sprite;
 
-    private SpriteRenderer renderSprite;
 
     private void Start()
     {
-        renderSprite = GetComponent<SpriteRenderer>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //destroy and call audio and animation
@@ -21,27 +20,13 @@ public class BoxDes : MonoBehaviour // Bricks class
         if (collision.name == ("Projectile 1(Clone)"))
         {
             AudioControl.instance.Play("bHit");
-            
+
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            renderSprite.enabled = false;
+            Destroy(gameObject);
             explodingEffect.GetComponent<Animation>();
             explodingEffect = Instantiate(explodingEffect, transform.position, transform.rotation);
-            StartCoroutine(AfterAnimation(0.6f));
+            
         }
         //Debug.Log("Brick//: " + collision.name);
-    }
-
-    private void SpriteChange()
-    {
-        renderSprite.enabled = true;
-        renderSprite.sprite = sprite[Random.Range(0, 3)];
-        renderSprite.color = new Color(1f, 1f, 1f, .7f);
-        
-    }
-
-    private IEnumerator AfterAnimation(float t)
-    {
-        yield return new WaitForSeconds(t);
-        SpriteChange();
     }
 }

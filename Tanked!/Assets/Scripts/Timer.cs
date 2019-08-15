@@ -11,7 +11,6 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject player;
 
     private float startTimer = 0;
-
     private bool fillStart = false;
 
     private void Start()
@@ -26,7 +25,7 @@ public class Timer : MonoBehaviour
     {
         if (fillStart == true)
         {
-            fillTime();
+            FillTime();
         }
     }
 
@@ -35,19 +34,19 @@ public class Timer : MonoBehaviour
         fillStart = true;
     }
 
-    private void stoptimer()
+    private void Stoptimer()
     {
         fillStart = false;
     }
 
-    private void fillTime()
+    private void FillTime()
     {
         // Debug.Log("timeradding");
         pTimer.value += Time.deltaTime;
         if (pTimer.value == 3.0f)
         {
             pTimer.value = 0;
-            stoptimer();
+            Stoptimer();
         }
     }
 }
