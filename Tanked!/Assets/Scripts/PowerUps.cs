@@ -9,7 +9,7 @@ public class PowerUps : MonoBehaviour
     [SerializeField] private Animation animEffect;
 
     private float speedUp = 2100;
-    private float rateSpeed = 0.8f;
+    private float rateSpeed = 0.6f;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
