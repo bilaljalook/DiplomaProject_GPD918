@@ -20,7 +20,7 @@ public class InputControl : MonoBehaviour
             ScoreSystem.score1 = 0;
             ScoreSystem.score2 = 0;
         }
-        if (Input.GetAxisRaw("Vertical") != 0 && Input.GetAxisRaw("Horizontal") != 0 && buttonSelected == false)//selection navigation
+        if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)//selection navigation
         {
             eventSystem.SetSelectedGameObject(selectedGameObject);
             buttonSelected = true;
