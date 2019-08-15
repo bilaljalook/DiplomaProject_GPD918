@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: e730be0e4a9c1634ca8c4e779e83a81f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7343917357012722207
+    second: gravel_0
+  - first:
+      213: 1468985900730828829
+    second: gravel_1
+  - first:
+      213: -2802481525678769862
+    second: gravel_2
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8.07
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gravel_0
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 138
+        width: 57
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16.5, y: -19}
+        - {x: 7.5, y: -19}
+        - {x: 3.5, y: -23}
+        - {x: -5.5, y: -19}
+        - {x: -20.5, y: -20}
+        - {x: -24.5, y: -9}
+        - {x: -20.5, y: -3}
+        - {x: -19.5, y: 3}
+        - {x: -24.5, y: 12}
+        - {x: -22.5, y: 21}
+        - {x: -15.5, y: 24}
+        - {x: -6.5, y: 21}
+        - {x: 3.5, y: 24}
+        - {x: 12.5, y: 21}
+        - {x: 19.5, y: 24}
+        - {x: 24.5, y: 19}
+        - {x: 25.5, y: 13}
+        - {x: 21.5, y: 10}
+        - {x: 26.5, y: 1}
+        - {x: 25.5, y: -6}
+        - {x: 27.5, y: -13}
+        - {x: 24.5, y: -23}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac265f5e10348948b45bec228bed63a
+      internalID: -7343917357012722207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravel_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 66
+        width: 56
+        height: 61
+      alignment: 9
+      pivot: {x: 0.49999973, y: 0.38738114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: -26.5}
+        - {x: 7, y: -25.5}
+        - {x: -5, y: -27.5}
+        - {x: -13, y: -23.5}
+        - {x: -9, y: -13.5}
+        - {x: -19, y: -2.5}
+        - {x: -13, y: 10.5}
+        - {x: -2, y: 12.5}
+        - {x: 5, y: 20.5}
+        - {x: 14, y: 23.5}
+        - {x: 17, y: 16.5}
+        - {x: 26, y: 5.5}
+        - {x: 26, y: -15.5}
+        - {x: 24, y: -22.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26df1610337fe2b45b303a8a6b305cfa
+      internalID: 1468985900730828829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gravel_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 6
+        width: 50
+        height: 52
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: -16}
+        - {x: 8, y: -19}
+        - {x: -1, y: -24}
+        - {x: -3, y: -18}
+        - {x: -10, y: -16}
+        - {x: -10, y: -6}
+        - {x: -16, y: -6}
+        - {x: -18, y: -12}
+        - {x: -25, y: -12}
+        - {x: -25, y: -5}
+        - {x: -21, y: -2}
+        - {x: -19, y: 8}
+        - {x: -8, y: 12}
+        - {x: 1, y: 19}
+        - {x: 9, y: 24}
+        - {x: 16, y: 15}
+        - {x: 22, y: 8}
+        - {x: 23, y: -8}
+        - {x: 12, y: -11}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c59a026019aebf45aff410f2f638647
+      internalID: -2802481525678769862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bc6f265407cdadd46a3cc7016ee35d43
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

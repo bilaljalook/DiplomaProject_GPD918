@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 95151952125045756}
   - component: {fileID: 2476910730318613458}
   m_Layer: 0
-  m_Name: BrickDEstroy
+  m_Name: BrickDestroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,20 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+//to call the slider of slider and savit it for audio control
 public class GetVolValue : MonoBehaviour
 {
-    [SerializeField] Slider vSlide;
-    void Start()
+    [SerializeField] private Slider vSlide;
+
+    private void Start()
     {
         vSlide.GetComponent<Slider>();
         vSlide.value = AudioControl.saveVol;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 }

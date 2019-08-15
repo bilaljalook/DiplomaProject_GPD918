@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-// this script will save the score of the game and other settings like the audio and key mapping , map generation and so on ......
+// this script for future use or refactoring purposes
 
 public class GameManager : MonoBehaviour
 {
@@ -20,13 +20,5 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(this);
-    }
-
-    private void Update()
-    {
-    }
-
-    private void KeepScore()
-    {
     }
 }

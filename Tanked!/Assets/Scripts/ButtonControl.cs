@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class ButtonControl : MonoBehaviour
 {
+    //referencs
     private Resolution[] resolution;
+
     public Dropdown resDrop;
 
+    //initialization
     private void Start()
     {
         ResolutionList();
     }
 
-    private void ResolutionList()
+    private void ResolutionList() //resolution option to change
     {
         resolution = Screen.resolutions;
 

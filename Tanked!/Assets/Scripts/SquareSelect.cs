@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 
-public class SquareSelect : MonoBehaviour
+public class SquareSelect : MonoBehaviour //To spawn the Squares after Generation is done
 {
-    [SerializeField] private LayerMask selectSquare;
+    //[SerializeField] private LayerMask selectSquare;
     [SerializeField] private LevelGenerator gen;
-    [SerializeField] private GameObject[] EmptySpace; // to choose what exact randoms to generate in the empty space
-    [SerializeField] private GameObject[] chooseRandomInsideRoom;
 
-    private void Start()
-    {
-        //int rand = Random.Range(0, chooseRandomGenerate.Length);
-        //Instantiate(chooseRandomGenerate[rand], transform.position, Quaternion.identity);
-    }
+    [SerializeField] private GameObject[] EmptySpace; // to choose what exact randoms to generate in the empty space
 
     private void Update()
     {

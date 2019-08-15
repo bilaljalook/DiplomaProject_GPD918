@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class TankBlueprint : MonoBehaviour
+public class TankBlueprint : MonoBehaviour //the control health and what happen to player if they die
 {
-    //TODO clean up the code here
+    //referencs
 
     public int health;
     public int NumHealth;
@@ -16,17 +16,13 @@ public class TankBlueprint : MonoBehaviour
     public GameObject Tank;
     public ScoreSystem score;
 
-    //BricksWallsBase star;
-
-    
     [SerializeField] private Animation explodingEffect;
 
-    // Use this for initialization
+    //initialization
     private void Start()
     {
         GameObject obj = GameObject.Find("ScoreSystem");
 
-        
         score = obj.GetComponent<ScoreSystem>();
         HealthBar();
     }
@@ -81,8 +77,6 @@ public class TankBlueprint : MonoBehaviour
 
     private void Die()
     {
-        //Tank.GetComponent<SpriteRenderer>().enabled = false;
-        //Tank.GetComponent<Collider2D>().enabled = false;
         Tank.SetActive(false);
         if (Tank.CompareTag("Player1") == false)
         {
@@ -96,7 +90,7 @@ public class TankBlueprint : MonoBehaviour
         NextScene();
     }
 
-    public void NextScene()
+    public void NextScene() //stopping input to play sound and calling next scene
     {
         PlayerController.stopInput = false;
         if (ScoreSystem.rCount < 2)

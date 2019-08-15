@@ -1,23 +1,22 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class BricksWallsBase : MonoBehaviour
+
+//TODO Power spawn after time, Shield 1 and then random spawn, animation for brick, bricks destroy sprite, sounds for 2 players
+public class BricksWallsBase : MonoBehaviour //Base Class
 {
-    
+    //references
     [SerializeField] private GameObject Star;
 
     private ScoreSystem score;
     [SerializeField] private Animation explodingEffect;
 
-    
     private void Start()
     {
-        
         Star = GameObject.Find("ScoreSystem");
         score = Star.GetComponent<ScoreSystem>();
     }
 
-    
     private void Update()
     {
     }
@@ -27,7 +26,7 @@ public class BricksWallsBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //when base star is destroyed to stop input, play audio, play animation, add scores
     {
         projectile projectile = collision.GetComponent<projectile>();
 
@@ -48,7 +47,7 @@ public class BricksWallsBase : MonoBehaviour
         }
     }
 
-    private IEnumerator wait(float t)
+    private IEnumerator wait(float t) //to wait for OnTrigger Function finish all lines, thren start next Scene
     {
         yield return new WaitForSeconds(t);
         BlockDestroyed();

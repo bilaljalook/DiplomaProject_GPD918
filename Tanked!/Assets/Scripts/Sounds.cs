@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Sounds
+public class Sounds //this Class holder for sounds array in Audio Control
 {
-    [SerializeField] public string name;
+    public string name;
 
-    [SerializeField] public AudioClip clip;
+    public AudioClip clip;
 
     [Range(0f, 1f)]
-    [SerializeField] public float volume;
-   
+    public float volume;
+
+    [Range(0f, 3f)]
+    public float pitch;
 
     [HideInInspector]
     public AudioSource sources;

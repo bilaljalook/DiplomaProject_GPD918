@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class InputControl : MonoBehaviour
-{  
+{
+    //references
     public EventSystem eventSystem;
 
     public GameObject selectedGameObject;
@@ -12,25 +13,19 @@ public class InputControl : MonoBehaviour
 
     public static bool GamePause = false;
 
-    // Use this for initialization
-    private void Start()
-    {
-    }
-
-    // Update is called once per frame
     private void Update()
     {
-        if (SceneManager.GetSceneByName("MainMenu").isLoaded)
+        if (SceneManager.GetSceneByName("MainMenu").isLoaded)//restart score when game is finished
         {
             ScoreSystem.score1 = 0;
             ScoreSystem.score2 = 0;
         }
-        if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)
+        if (Input.GetAxisRaw("Vertical") != 0 && buttonSelected == false)//selection navigation
         {
             eventSystem.SetSelectedGameObject(selectedGameObject);
             buttonSelected = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))//Pause menu start
         {
             if (GamePause)
             {
@@ -38,12 +33,12 @@ public class InputControl : MonoBehaviour
             }
             else
             {
-                if (PlayerController.stopInput==false)
+                if (PlayerController.stopInput == false)// can pause if the game is started
                 {
-
-                Pause();
-                eventSystem.SetSelectedGameObject(null);
-                eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
+                    PlayerController.stopInput = true; //pause any player movement during pause menu control
+                    Pause();
+                    eventSystem.SetSelectedGameObject(null); //reseting selection to fix bug for animation button highlgihts
+                    eventSystem.SetSelectedGameObject(eventSystem.firstSelectedGameObject);
                 }
             }
         }
@@ -52,13 +47,14 @@ public class InputControl : MonoBehaviour
     private void Pause()
     {
         selectedGameObject.SetActive(true);
-        
+
         Time.timeScale = 0f;
         GamePause = true;
     }
 
     public void Resume()
     {
+        PlayerController.stopInput = false;
         selectedGameObject.SetActive(false);
         Time.timeScale = 1f;
         GamePause = false;
@@ -88,7 +84,6 @@ public class InputControl : MonoBehaviour
 
     public void FullScreen(bool isFull)
     {
-        
         if (isFull)
         {
             Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;

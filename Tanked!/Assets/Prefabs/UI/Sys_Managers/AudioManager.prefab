@@ -48,29 +48,46 @@ MonoBehaviour:
   - name: Shoot
     clip: {fileID: 8300000, guid: 5d079561ddc3ce040aa6ef2e7587d643, type: 3}
     volume: 0.805
+    pitch: 1
     sources: {fileID: 0}
   - name: bHit
     clip: {fileID: 8300000, guid: cd112e069f545dd4ba2395bb7c69b320, type: 3}
     volume: 0.54
+    pitch: 1
     sources: {fileID: 0}
   - name: tHit
     clip: {fileID: 8300000, guid: 7a6b7fa8deb8f864baa36ccf32630cdb, type: 3}
     volume: 0.52
+    pitch: 1
     sources: {fileID: 0}
   - name: explode
     clip: {fileID: 8300000, guid: 208b975fe77aff24a9ecb4b5b6b35b96, type: 3}
     volume: 1
+    pitch: 1
     sources: {fileID: 0}
   - name: powerUp
     clip: {fileID: 8300000, guid: cc6270d207b27114494f80e871dbcbca, type: 3}
     volume: 1
+    pitch: 1
     sources: {fileID: 0}
   - name: shield
     clip: {fileID: 8300000, guid: af4605905a7200e49a2ae977c48befbc, type: 3}
     volume: 1
+    pitch: 1
+    sources: {fileID: 0}
+  - name: Player1 move
+    clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
+    volume: 0.554
+    pitch: 1.71
+    sources: {fileID: 0}
+  - name: Player2 move
+    clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
+    volume: 0.491
+    pitch: 2.41
     sources: {fileID: 0}
   - name: move
-    clip: {fileID: 8300000, guid: 7018d4816c395284fb4e13baf12cf303, type: 3}
-    volume: 0.582
+    clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
+    volume: 0
+    pitch: 0
     sources: {fileID: 0}
   Vol: {fileID: 0}

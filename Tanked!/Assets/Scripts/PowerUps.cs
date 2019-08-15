@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PowerUps : MonoBehaviour
 {
-    //TODO make the declarations of the script private for the ones you dont need
+    //referencs
     public ParticleSystem effect;
 
     [SerializeField] private Animation animEffect;
@@ -14,30 +14,24 @@ public class PowerUps : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D col;
 
-    
+    //initialization
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
     }
 
-    private void Update()
-    {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //couroutines for Powerups on collision
     {
         PlayerController pc = collision.GetComponent<PlayerController>();
 
         if (gameObject.CompareTag("PowerUpSpeed"))
         {
             StartCoroutine(PickPowerSpeed(pc));
-            
         }
         else if (gameObject.CompareTag("PowerUpRate"))
         {
             StartCoroutine(PickPowerRate(pc));
-            
         }
         else if (gameObject.CompareTag("PowerUpShield"))
         {
@@ -45,21 +39,20 @@ public class PowerUps : MonoBehaviour
         }
     }
 
-    private void DisableComponentsAndPlayEffect()
+    private void DisableComponentsAndPlayEffect() //disable sprites and colliders of power up
     {
         spriteRenderer.enabled = false;
         col.enabled = false;
 
-        
         animEffect.GetComponent<Animation>();
         animEffect = Instantiate(animEffect, transform.position, transform.rotation);
     }
 
-    private IEnumerator PickPowerSpeed(PlayerController player)
+    private IEnumerator PickPowerSpeed(PlayerController player)//disable power, call audio clip, set speed power up of player
     {
         AudioControl.instance.Play("powerUp");
         DisableComponentsAndPlayEffect();
-        player.SpeedTimer();
+        player.FillSpeedTimer();
         player.Speed += speedUp;
 
         yield return new WaitForSeconds(3);
@@ -68,11 +61,11 @@ public class PowerUps : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator PickPowerRate(PlayerController player)
+    private IEnumerator PickPowerRate(PlayerController player)//disable power, call audio clip, set fire rate power up player
     {
         AudioControl.instance.Play("powerUp");
         DisableComponentsAndPlayEffect();
-        player.RateTimer();
+        player.FillRateTimer();
         player.RateOfFire -= rateSpeed;
 
         yield return new WaitForSeconds(3);
@@ -81,13 +74,13 @@ public class PowerUps : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private IEnumerator PickPowerShield(PlayerController player)
+    private IEnumerator PickPowerShield(PlayerController player) //disable power, call audio clip, calls shield
     {
-         AudioControl.instance.Play("shield");
+        AudioControl.instance.Play("shield");
         //Debug.Log(player.name); //to check which player getting the shield
         DisableComponentsAndPlayEffect();
 
-        player.Shield_On();
+        player.ActivateShield();
 
         yield return 0;
     }

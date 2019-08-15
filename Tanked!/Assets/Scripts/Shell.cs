@@ -1,21 +1,13 @@
 ﻿using UnityEngine;
 
-
-public class Shell : MonoBehaviour
+public class Shell : MonoBehaviour //the spawn point of the Projectile
 {
     [SerializeField] private Transform BarrelPoint;
     [SerializeField] private GameObject ProPre;
 
-   
-
-    private void Update()
-    {
-    }
-
     public void Shoot()
     {
-        FindObjectOfType<AudioControl>().Play("Shoot");
+        AudioControl.instance.Play("Shoot");
         Instantiate(ProPre, BarrelPoint.position, BarrelPoint.rotation);
-        
     }
 }

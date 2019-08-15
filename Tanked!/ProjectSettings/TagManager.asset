@@ -59,20 +59,20 @@ TagManager:
   - name: Background
     uniqueID: 3055628223
     locked: 0
+  - name: PickUps
+    uniqueID: 2704339547
+    locked: 0
+  - name: block
+    uniqueID: 2685417567
+    locked: 0
   - name: Player
     uniqueID: 1279886953
     locked: 0
   - name: Projectile
     uniqueID: 1908945337
     locked: 0
-  - name: PickUps
-    uniqueID: 2704339547
-    locked: 0
   - name: Walls&Blocks
     uniqueID: 1253737281
-    locked: 0
-  - name: block
-    uniqueID: 2685417567
     locked: 0
   - name: Object
     uniqueID: 3380005225

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour
+public class LevelGenerator : MonoBehaviour  //Generate Level
 {
+    //References
     [SerializeField] private Transform startPosition;
-    [SerializeField] public GameObject[] Squares; // index S1(0-3), S2(4-7), S3,4,7,8(8-17), S5(18-21), S6(22-25)
+
+    public GameObject[] Squares; // index S1(0-3), S2(4-7), S3,4,7,8(8-17), S5(18-21), S6(22-25)
 
     [SerializeField] private float movementAmount;
     private int SpawnDirection = 1;
@@ -11,7 +13,6 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private float startTimeToSquare = 0.2f;
     private float TimeToSquare;
 
-    
     [SerializeField] private float maxY;
 
     public bool StopGen;
@@ -21,7 +22,6 @@ public class LevelGenerator : MonoBehaviour
         transform.position = startPosition.position;
         Instantiate(Squares[Random.Range(0, 4)], transform.position, Quaternion.identity);
         PlayerController.stopInput = true;
-        
     }
 
     private void Update()
@@ -86,7 +86,6 @@ public class LevelGenerator : MonoBehaviour
             }
             else
             {
-                
                 StopGen = true; //Stop Generating
             }
         }

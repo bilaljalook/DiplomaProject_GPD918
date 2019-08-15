@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
-public class SquareSpawn : MonoBehaviour
+public class SquareSpawn : MonoBehaviour //to select what to spawn inside of each square, such as Block, Power ups, or any gameObject
 {
+    //referencs
     [SerializeField] private GameObject[] objects;
-    //[SerializeField] GameObject[] randomPickUp;
 
+    //initialization
     private void Start()
     {
         SpawnTheRest();
