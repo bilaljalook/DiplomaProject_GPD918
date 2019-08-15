@@ -66,8 +66,8 @@ MonoBehaviour:
     pitch: 1.12
     sources: {fileID: 0}
   - name: powerUp
-    clip: {fileID: 8300000, guid: 2690ed6de38d38e419503cd6bf51f150, type: 3}
-    volume: 0.694
+    clip: {fileID: 8300000, guid: cc6270d207b27114494f80e871dbcbca, type: 3}
+    volume: 0.902
     pitch: 1
     sources: {fileID: 0}
   - name: shield
@@ -77,13 +77,13 @@ MonoBehaviour:
     sources: {fileID: 0}
   - name: Player1 move
     clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
-    volume: 0.3
-    pitch: 2.76
+    volume: 0.087
+    pitch: 2.47
     sources: {fileID: 0}
   - name: Player2 move
     clip: {fileID: 8300000, guid: a96312d2a5ccaba4ab6b055abf2d413f, type: 3}
-    volume: 0.12
-    pitch: 3
+    volume: 0.034
+    pitch: 2.12
     sources: {fileID: 0}
   - name: Player2 Shoot
     clip: {fileID: 8300000, guid: 2690ed6de38d38e419503cd6bf51f150, type: 3}

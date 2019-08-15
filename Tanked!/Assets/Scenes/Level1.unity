@@ -7318,16 +7318,6 @@ PrefabInstance:
       propertyPath: Vol
       value: 
       objectReference: {fileID: 226428867}
-    - target: {fileID: 5787826656209054680, guid: c97ddb94fa727854fb7c24d1e9811bc1,
-        type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: cc6270d207b27114494f80e871dbcbca, type: 3}
-    - target: {fileID: 5787826656209054680, guid: c97ddb94fa727854fb7c24d1e9811bc1,
-        type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.902
-      objectReference: {fileID: 0}
     - target: {fileID: 5787826656209054687, guid: c97ddb94fa727854fb7c24d1e9811bc1,
         type: 3}
       propertyPath: m_LocalPosition.x
